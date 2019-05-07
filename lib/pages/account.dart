@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PageTwo extends StatelessWidget {
+class Account extends StatelessWidget { 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("login success"),
+        title: Text('account'),
       ),
-      body: Center(
-        child: Text("login success"),
-      ),
+      body: Center(child: Text('account')),
     );
   }
 }
