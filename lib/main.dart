@@ -1,109 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Startup Name Generator',
-      theme: ThemeData(
-        primaryColor: Colors.white
-      ),
-      home: RandomWords(),
+    return new MaterialApp(
+      theme: new ThemeData(primarySwatch: Colors.blue),
+      home: new LoginPage(),
     );
   }
 }
 
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final Set<WordPair> _saved = Set<WordPair>();
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-  void _pushSaved(){
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (BuildContext context){
-          final Iterable<ListTile> tiles = _saved.map(
-            (WordPair pair) {
-              return ListTile(
-                title: Text(
-                  pair.asPascalCase,
-                  style: _biggerFont,
-                ),
-              );
-            }
-          );
-          final List<Widget> divided = ListTile
-            .divideTiles(
-              context: context,
-              tiles: tiles,
-            )
-            .toList();
-          
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('Saved Suggestions'),
-            ),
-            body: ListView(children: divided),
-          );
-        },
-      ),
+class LoginPage extends StatefulWidget {
+  @override
+  State createState() => new LoginPageState();
+}
+
+class LoginPageState extends State<LoginPage>
+    with SingleTickerProviderStateMixin {
+  Animation<double> _iconAnimation;
+  AnimationController _iconAnimationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _iconAnimationController = new AnimationController(
+        vsync: this, duration: new Duration(milliseconds: 500));
+    _iconAnimation = new CurvedAnimation(
+      parent: _iconAnimationController,
+      curve: Curves.bounceOut,
     );
+    _iconAnimation.addListener(() => this.setState(() {}));
+    _iconAnimationController.forward();
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved)
-        ],
-      ),
-      body: _buildSuggestions(),
+    
+    return new Scaffold(
+      backgroundColor: Colors.white,
+      body: new Stack(fit: StackFit.expand, children: <Widget>[
+        new Image(
+          image: new AssetImage("assets/girl.jpeg"),
+          fit: BoxFit.cover,
+          colorBlendMode: BlendMode.darken,
+          color: Colors.black87,
+        ),
+        new Theme(
+          data: new ThemeData(
+              brightness: Brightness.dark,
+              inputDecorationTheme: new InputDecorationTheme(
+                // hintStyle: new TextStyle(color: Colors.blue, fontSize: 20.0),
+                labelStyle:
+                    new TextStyle(color: Colors.tealAccent, fontSize: 25.0),
+              )),
+          isMaterialAppTheme: true,
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new FlutterLogo(
+                size: _iconAnimation.value * 140.0,
+              ),
+              new Container(
+                padding: const EdgeInsets.all(40.0),
+                child: new Form(
+                  autovalidate: true,
+                  child: new Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      new TextFormField(
+                        decoration: new InputDecoration(
+                            labelText: "Enter Email", fillColor: Colors.white),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      new TextFormField(
+                        decoration: new InputDecoration(
+                          labelText: "Enter2 Password",
+                        ),
+                        obscureText: true,
+                        keyboardType: TextInputType.text,
+                      ),
+                      new Padding(
+                        padding: const EdgeInsets.only(top: 60.0),
+                      ),
+                      new MaterialButton(
+                        height: 50.0,
+                        minWidth: 150.0,
+                        color: Colors.green,
+                        splashColor: Colors.teal,
+                        textColor: Colors.white,
+                        child: new Icon(FontAwesomeIcons.signInAlt),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ]),
     );
   }
-
-  Widget _buildSuggestions() {
-    return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, i) {
-        if (i.isOdd) return Divider();
-
-        final index = i ~/ 1;
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-        return _buildRow(_suggestions[index]);
-      },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      trailing: Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      onTap: (){
-        setState(() {
-         if(alreadySaved){
-           _saved.remove(pair);
-         } else{
-           _saved.add(pair);
-         }
-        });
-      },
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  RandomWordsState createState() => RandomWordsState();
 }
