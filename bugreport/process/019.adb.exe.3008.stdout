@@ -1,2 +1,0 @@
---------- beginning of main
-05-08 04:36:02.520 D/NetworkMonitor/100( 2157): PROBE_FALLBACK http://play.googleapis.com/generate_204 Probe failed with exception java.net.SocketException: Connection reset

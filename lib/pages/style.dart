@@ -215,9 +215,7 @@ var textOverflow = Container(
         overflow: TextOverflow.ellipsis,
         maxLines: 1,
       ),
-      decoration: BoxDecoration(
-        color: Colors.red[400]
-      ),
+      decoration: BoxDecoration(color: Colors.red[400]),
     ),
   ),
   width: 320.0,
@@ -229,10 +227,52 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('style demo'),
-      ),
-      body: textOverflow,
-    );
+        appBar: AppBar(
+          title: Text('Instagram'),
+        ),
+        body: textOverflow,
+        bottomNavigationBar: new Container(
+          color: Colors.white,
+          height: 50.0,
+          alignment: Alignment.center,
+          child: new BottomAppBar(
+            child: new Row(
+              // alignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                new IconButton(
+                  icon: Icon(
+                    Icons.home,
+                  ),
+                  onPressed: () {},
+                ),
+                new IconButton(
+                  icon: Icon(
+                    Icons.search,
+                  ),
+                  onPressed: null,
+                ),
+                new IconButton(
+                  icon: Icon(
+                    Icons.add_box,
+                  ),
+                  onPressed: null,
+                ),
+                new IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                  ),
+                  onPressed: null,
+                ),
+                new IconButton(
+                  icon: Icon(
+                    Icons.account_box,
+                  ),
+                  onPressed: null,
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
