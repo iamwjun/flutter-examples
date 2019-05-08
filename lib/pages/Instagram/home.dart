@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/Instagram/body.dart';
+import 'package:image_picker/image_picker.dart';
 
 class InstagramHome extends StatelessWidget {
-  void _camera(){
-    debugger();
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
   }
 
   final AppBar topBar = AppBar(
@@ -20,7 +19,10 @@ class InstagramHome extends StatelessWidget {
     actions: <Widget>[
       Padding(
         padding: const EdgeInsets.only(right: 12.0),
-        child: IconButton(icon: Icon(Icons.send), onPressed: _camera,),
+        child: IconButton(
+          icon: Icon(Icons.send),
+          onPressed: null
+        ),
       )
     ],
   );
