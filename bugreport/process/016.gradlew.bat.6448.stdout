@@ -1,0 +1,494 @@
+
+> Task :app:properties
+
+------------------------------------------------------------
+Project :app
+------------------------------------------------------------
+
+INTERNAL__CHECKED_MINIMUM_PLUGIN_VERSIONS: true
+allprojects: [project ':app']
+android: com.android.build.gradle.internal.dsl.BaseAppModuleExtension_Decorated@17a6f9ba
+androidDependencies: task ':app:androidDependencies'
+ant: org.gradle.api.internal.project.DefaultAntBuilder@fde506a
+antBuilderFactory: org.gradle.api.internal.project.DefaultAntBuilderFactory@291c79d4
+archivesBaseName: app
+artifacts: org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler_Decorated@28eca84f
+asDynamicObject: DynamicObject for project ':app'
+assemble: task ':app:assemble'
+assembleAndroidTest: task ':app:assembleAndroidTest'
+assembleDebug: task ':app:assembleDebug'
+assembleDebugAndroidTest: task ':app:assembleDebugAndroidTest'
+assembleDebugUnitTest: task ':app:assembleDebugUnitTest'
+assembleDynamicProfile: task ':app:assembleDynamicProfile'
+assembleDynamicProfileUnitTest: task ':app:assembleDynamicProfileUnitTest'
+assembleDynamicRelease: task ':app:assembleDynamicRelease'
+assembleDynamicReleaseUnitTest: task ':app:assembleDynamicReleaseUnitTest'
+assembleProfile: task ':app:assembleProfile'
+assembleProfileUnitTest: task ':app:assembleProfileUnitTest'
+assembleRelease: task ':app:assembleRelease'
+assembleReleaseUnitTest: task ':app:assembleReleaseUnitTest'
+baseClassLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@827efc1
+buildDebugPreBundle: task ':app:buildDebugPreBundle'
+buildDir: E:\flutter\getstart\myapp\build\app
+buildDynamicProfilePreBundle: task ':app:buildDynamicProfilePreBundle'
+buildDynamicReleasePreBundle: task ':app:buildDynamicReleasePreBundle'
+buildFile: E:\flutter\getstart\myapp\android\app\build.gradle
+buildOutputs: BaseVariantOutput container
+buildPath: :
+buildProfilePreBundle: task ':app:buildProfilePreBundle'
+buildReleasePreBundle: task ':app:buildReleasePreBundle'
+buildScriptSource: org.gradle.groovy.scripts.TextResourceScriptSource@7507a3af
+buildscript: org.gradle.api.internal.initialization.DefaultScriptHandler@3f1fb602
+bundle: task ':app:bundle'
+bundleDebug: task ':app:bundleDebug'
+bundleDebugAndroidTestResources: task ':app:bundleDebugAndroidTestResources'
+bundleDebugResources: task ':app:bundleDebugResources'
+bundleDynamicProfile: task ':app:bundleDynamicProfile'
+bundleDynamicProfileResources: task ':app:bundleDynamicProfileResources'
+bundleDynamicRelease: task ':app:bundleDynamicRelease'
+bundleDynamicReleaseResources: task ':app:bundleDynamicReleaseResources'
+bundleProfile: task ':app:bundleProfile'
+bundleProfileResources: task ':app:bundleProfileResources'
+bundleRelease: task ':app:bundleRelease'
+bundleReleaseResources: task ':app:bundleReleaseResources'
+check: task ':app:check'
+checkDebugAndroidTestClasspath: task ':app:checkDebugAndroidTestClasspath'
+checkDebugClasspath: task ':app:checkDebugClasspath'
+checkDebugLibraries: task ':app:checkDebugLibraries'
+checkDebugManifest: task ':app:checkDebugManifest'
+checkDynamicProfileClasspath: task ':app:checkDynamicProfileClasspath'
+checkDynamicProfileLibraries: task ':app:checkDynamicProfileLibraries'
+checkDynamicProfileManifest: task ':app:checkDynamicProfileManifest'
+checkDynamicReleaseClasspath: task ':app:checkDynamicReleaseClasspath'
+checkDynamicReleaseLibraries: task ':app:checkDynamicReleaseLibraries'
+checkDynamicReleaseManifest: task ':app:checkDynamicReleaseManifest'
+checkProfileClasspath: task ':app:checkProfileClasspath'
+checkProfileLibraries: task ':app:checkProfileLibraries'
+checkProfileManifest: task ':app:checkProfileManifest'
+checkReleaseClasspath: task ':app:checkReleaseClasspath'
+checkReleaseLibraries: task ':app:checkReleaseLibraries'
+checkReleaseManifest: task ':app:checkReleaseManifest'
+childProjects: {}
+class: class org.gradle.api.internal.project.DefaultProject_Decorated
+classLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@72fccf7e
+cleanBuildCache: task ':app:cleanBuildCache'
+compileDebugAidl: task ':app:compileDebugAidl'
+compileDebugAndroidTestAidl: task ':app:compileDebugAndroidTestAidl'
+compileDebugAndroidTestJavaWithJavac: task ':app:compileDebugAndroidTestJavaWithJavac'
+compileDebugAndroidTestNdk: task ':app:compileDebugAndroidTestNdk'
+compileDebugAndroidTestRenderscript: task ':app:compileDebugAndroidTestRenderscript'
+compileDebugAndroidTestShaders: task ':app:compileDebugAndroidTestShaders'
+compileDebugAndroidTestSources: task ':app:compileDebugAndroidTestSources'
+compileDebugJavaWithJavac: task ':app:compileDebugJavaWithJavac'
+compileDebugNdk: task ':app:compileDebugNdk'
+compileDebugRenderscript: task ':app:compileDebugRenderscript'
+compileDebugShaders: task ':app:compileDebugShaders'
+compileDebugSources: task ':app:compileDebugSources'
+compileDebugUnitTestJavaWithJavac: task ':app:compileDebugUnitTestJavaWithJavac'
+compileDebugUnitTestSources: task ':app:compileDebugUnitTestSources'
+compileDynamicProfileAidl: task ':app:compileDynamicProfileAidl'
+compileDynamicProfileJavaWithJavac: task ':app:compileDynamicProfileJavaWithJavac'
+compileDynamicProfileNdk: task ':app:compileDynamicProfileNdk'
+compileDynamicProfileRenderscript: task ':app:compileDynamicProfileRenderscript'
+compileDynamicProfileShaders: task ':app:compileDynamicProfileShaders'
+compileDynamicProfileSources: task ':app:compileDynamicProfileSources'
+compileDynamicProfileUnitTestJavaWithJavac: task ':app:compileDynamicProfileUnitTestJavaWithJavac'
+compileDynamicProfileUnitTestSources: task ':app:compileDynamicProfileUnitTestSources'
+compileDynamicReleaseAidl: task ':app:compileDynamicReleaseAidl'
+compileDynamicReleaseJavaWithJavac: task ':app:compileDynamicReleaseJavaWithJavac'
+compileDynamicReleaseNdk: task ':app:compileDynamicReleaseNdk'
+compileDynamicReleaseRenderscript: task ':app:compileDynamicReleaseRenderscript'
+compileDynamicReleaseShaders: task ':app:compileDynamicReleaseShaders'
+compileDynamicReleaseSources: task ':app:compileDynamicReleaseSources'
+compileDynamicReleaseUnitTestJavaWithJavac: task ':app:compileDynamicReleaseUnitTestJavaWithJavac'
+compileDynamicReleaseUnitTestSources: task ':app:compileDynamicReleaseUnitTestSources'
+compileLint: task ':app:compileLint'
+compileProfileAidl: task ':app:compileProfileAidl'
+compileProfileJavaWithJavac: task ':app:compileProfileJavaWithJavac'
+compileProfileNdk: task ':app:compileProfileNdk'
+compileProfileRenderscript: task ':app:compileProfileRenderscript'
+compileProfileShaders: task ':app:compileProfileShaders'
+compileProfileSources: task ':app:compileProfileSources'
+compileProfileUnitTestJavaWithJavac: task ':app:compileProfileUnitTestJavaWithJavac'
+compileProfileUnitTestSources: task ':app:compileProfileUnitTestSources'
+compileReleaseAidl: task ':app:compileReleaseAidl'
+compileReleaseJavaWithJavac: task ':app:compileReleaseJavaWithJavac'
+compileReleaseNdk: task ':app:compileReleaseNdk'
+compileReleaseRenderscript: task ':app:compileReleaseRenderscript'
+compileReleaseShaders: task ':app:compileReleaseShaders'
+compileReleaseSources: task ':app:compileReleaseSources'
+compileReleaseUnitTestJavaWithJavac: task ':app:compileReleaseUnitTestJavaWithJavac'
+compileReleaseUnitTestSources: task ':app:compileReleaseUnitTestSources'
+components: SoftwareComponentInternal set
+configurationActions: org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@45127f07
+configurationTargetIdentifier: org.gradle.configuration.ConfigurationTargetIdentifier$1@dc0a6d1
+configurations: configuration container
+connectedAndroidTest: task ':app:connectedAndroidTest'
+connectedCheck: task ':app:connectedCheck'
+connectedDebugAndroidTest: task ':app:connectedDebugAndroidTest'
+consumeConfigAttr: task ':app:consumeConfigAttr'
+convention: org.gradle.api.internal.plugins.DefaultConvention@4fadaecd
+copyFlutterAssetsDebug: task ':app:copyFlutterAssetsDebug'
+copyFlutterAssetsDynamicProfile: task ':app:copyFlutterAssetsDynamicProfile'
+copyFlutterAssetsDynamicRelease: task ':app:copyFlutterAssetsDynamicRelease'
+copyFlutterAssetsProfile: task ':app:copyFlutterAssetsProfile'
+copyFlutterAssetsRelease: task ':app:copyFlutterAssetsRelease'
+createDebugCompatibleScreenManifests: task ':app:createDebugCompatibleScreenManifests'
+createDynamicProfileCompatibleScreenManifests: task ':app:createDynamicProfileCompatibleScreenManifests'
+createDynamicReleaseCompatibleScreenManifests: task ':app:createDynamicReleaseCompatibleScreenManifests'
+createMockableJar: task ':app:createMockableJar'
+createProfileCompatibleScreenManifests: task ':app:createProfileCompatibleScreenManifests'
+createReleaseCompatibleScreenManifests: task ':app:createReleaseCompatibleScreenManifests'
+defaultArtifacts: org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@5bbe0f79
+defaultTasks: []
+deferredProjectConfiguration: org.gradle.api.internal.project.DeferredProjectConfiguration@d02a94e
+dependencies: org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler_Decorated@5fc7011
+dependencyLocking: org.gradle.internal.locking.DefaultDependencyLockingHandler_Decorated@27856da5
+depth: 1
+description: null
+deviceAndroidTest: task ':app:deviceAndroidTest'
+deviceCheck: task ':app:deviceCheck'
+displayName: project ':app'
+distsDir: E:\flutter\getstart\myapp\build\app\distributions
+distsDirName: distributions
+docsDir: E:\flutter\getstart\myapp\build\app\docs
+docsDirName: docs
+ext: org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@ceb7beb
+extensions: org.gradle.api.internal.plugins.DefaultConvention@4fadaecd
+extractApksForDebug: task ':app:extractApksForDebug'
+extractApksForDynamicProfile: task ':app:extractApksForDynamicProfile'
+extractApksForDynamicRelease: task ':app:extractApksForDynamicRelease'
+extractApksForProfile: task ':app:extractApksForProfile'
+extractApksForRelease: task ':app:extractApksForRelease'
+extractProguardFiles: task ':app:extractProguardFiles'
+fileOperations: org.gradle.api.internal.file.DefaultFileOperations@14bbebe1
+fileResolver: org.gradle.api.internal.file.BaseDirFileResolver@72216d9f
+flutter: FlutterExtension_Decorated@7e45de3b
+flutterBuildDebug: task ':app:flutterBuildDebug'
+flutterBuildDynamicProfile: task ':app:flutterBuildDynamicProfile'
+flutterBuildDynamicRelease: task ':app:flutterBuildDynamicRelease'
+flutterBuildProfile: task ':app:flutterBuildProfile'
+flutterBuildRelease: task ':app:flutterBuildRelease'
+flutterBuildX86Jar: task ':app:flutterBuildX86Jar'
+generateDebugAndroidTestAssets: task ':app:generateDebugAndroidTestAssets'
+generateDebugAndroidTestBuildConfig: task ':app:generateDebugAndroidTestBuildConfig'
+generateDebugAndroidTestResValues: task ':app:generateDebugAndroidTestResValues'
+generateDebugAndroidTestResources: task ':app:generateDebugAndroidTestResources'
+generateDebugAndroidTestSources: task ':app:generateDebugAndroidTestSources'
+generateDebugAssets: task ':app:generateDebugAssets'
+generateDebugBuildConfig: task ':app:generateDebugBuildConfig'
+generateDebugFeatureMetadata: task ':app:generateDebugFeatureMetadata'
+generateDebugFeatureTransitiveDeps: task ':app:generateDebugFeatureTransitiveDeps'
+generateDebugResValues: task ':app:generateDebugResValues'
+generateDebugResources: task ':app:generateDebugResources'
+generateDebugSources: task ':app:generateDebugSources'
+generateDebugUnitTestAssets: task ':app:generateDebugUnitTestAssets'
+generateDebugUnitTestResources: task ':app:generateDebugUnitTestResources'
+generateDebugUnitTestSources: task ':app:generateDebugUnitTestSources'
+generateDynamicProfileAssets: task ':app:generateDynamicProfileAssets'
+generateDynamicProfileBuildConfig: task ':app:generateDynamicProfileBuildConfig'
+generateDynamicProfileFeatureMetadata: task ':app:generateDynamicProfileFeatureMetadata'
+generateDynamicProfileFeatureTransitiveDeps: task ':app:generateDynamicProfileFeatureTransitiveDeps'
+generateDynamicProfileResValues: task ':app:generateDynamicProfileResValues'
+generateDynamicProfileResources: task ':app:generateDynamicProfileResources'
+generateDynamicProfileSources: task ':app:generateDynamicProfileSources'
+generateDynamicProfileUnitTestAssets: task ':app:generateDynamicProfileUnitTestAssets'
+generateDynamicProfileUnitTestResources: task ':app:generateDynamicProfileUnitTestResources'
+generateDynamicProfileUnitTestSources: task ':app:generateDynamicProfileUnitTestSources'
+generateDynamicReleaseAssets: task ':app:generateDynamicReleaseAssets'
+generateDynamicReleaseBuildConfig: task ':app:generateDynamicReleaseBuildConfig'
+generateDynamicReleaseFeatureMetadata: task ':app:generateDynamicReleaseFeatureMetadata'
+generateDynamicReleaseFeatureTransitiveDeps: task ':app:generateDynamicReleaseFeatureTransitiveDeps'
+generateDynamicReleaseResValues: task ':app:generateDynamicReleaseResValues'
+generateDynamicReleaseResources: task ':app:generateDynamicReleaseResources'
+generateDynamicReleaseSources: task ':app:generateDynamicReleaseSources'
+generateDynamicReleaseUnitTestAssets: task ':app:generateDynamicReleaseUnitTestAssets'
+generateDynamicReleaseUnitTestResources: task ':app:generateDynamicReleaseUnitTestResources'
+generateDynamicReleaseUnitTestSources: task ':app:generateDynamicReleaseUnitTestSources'
+generateProfileAssets: task ':app:generateProfileAssets'
+generateProfileBuildConfig: task ':app:generateProfileBuildConfig'
+generateProfileFeatureMetadata: task ':app:generateProfileFeatureMetadata'
+generateProfileFeatureTransitiveDeps: task ':app:generateProfileFeatureTransitiveDeps'
+generateProfileResValues: task ':app:generateProfileResValues'
+generateProfileResources: task ':app:generateProfileResources'
+generateProfileSources: task ':app:generateProfileSources'
+generateProfileUnitTestAssets: task ':app:generateProfileUnitTestAssets'
+generateProfileUnitTestResources: task ':app:generateProfileUnitTestResources'
+generateProfileUnitTestSources: task ':app:generateProfileUnitTestSources'
+generateReleaseAssets: task ':app:generateReleaseAssets'
+generateReleaseBuildConfig: task ':app:generateReleaseBuildConfig'
+generateReleaseFeatureMetadata: task ':app:generateReleaseFeatureMetadata'
+generateReleaseFeatureTransitiveDeps: task ':app:generateReleaseFeatureTransitiveDeps'
+generateReleaseResValues: task ':app:generateReleaseResValues'
+generateReleaseResources: task ':app:generateReleaseResources'
+generateReleaseSources: task ':app:generateReleaseSources'
+generateReleaseUnitTestAssets: task ':app:generateReleaseUnitTestAssets'
+generateReleaseUnitTestResources: task ':app:generateReleaseUnitTestResources'
+generateReleaseUnitTestSources: task ':app:generateReleaseUnitTestSources'
+gradle: build 'android'
+group: android
+identityPath: :app
+inheritedScope: org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2926c63b
+installDebug: task ':app:installDebug'
+installDebugAndroidTest: task ':app:installDebugAndroidTest'
+installDynamicProfile: task ':app:installDynamicProfile'
+installDynamicRelease: task ':app:installDynamicRelease'
+installProfile: task ':app:installProfile'
+installRelease: task ':app:installRelease'
+java: org.gradle.api.plugins.internal.DefaultJavaPluginExtension_Decorated@6209c41d
+javaPreCompileDebug: task ':app:javaPreCompileDebug'
+javaPreCompileDebugAndroidTest: task ':app:javaPreCompileDebugAndroidTest'
+javaPreCompileDebugUnitTest: task ':app:javaPreCompileDebugUnitTest'
+javaPreCompileDynamicProfile: task ':app:javaPreCompileDynamicProfile'
+javaPreCompileDynamicProfileUnitTest: task ':app:javaPreCompileDynamicProfileUnitTest'
+javaPreCompileDynamicRelease: task ':app:javaPreCompileDynamicRelease'
+javaPreCompileDynamicReleaseUnitTest: task ':app:javaPreCompileDynamicReleaseUnitTest'
+javaPreCompileProfile: task ':app:javaPreCompileProfile'
+javaPreCompileProfileUnitTest: task ':app:javaPreCompileProfileUnitTest'
+javaPreCompileRelease: task ':app:javaPreCompileRelease'
+javaPreCompileReleaseUnitTest: task ':app:javaPreCompileReleaseUnitTest'
+layout: org.gradle.api.internal.file.DefaultProjectLayout@1bbd0056
+libsDir: E:\flutter\getstart\myapp\build\app\libs
+libsDirName: libs
+lint: task ':app:lint'
+lintDebug: task ':app:lintDebug'
+lintDynamicProfile: task ':app:lintDynamicProfile'
+lintDynamicRelease: task ':app:lintDynamicRelease'
+lintFix: task ':app:lintFix'
+lintProfile: task ':app:lintProfile'
+lintRelease: task ':app:lintRelease'
+lintVitalRelease: task ':app:lintVitalRelease'
+listenerBuildOperationDecorator: org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator@4b59b11c
+logger: org.gradle.internal.logging.slf4j.OutputEventListenerBackedLogger@530549f5
+logging: org.gradle.internal.logging.services.DefaultLoggingManager@5451b152
+mainApkListPersistenceDebug: task ':app:mainApkListPersistenceDebug'
+mainApkListPersistenceDebugAndroidTest: task ':app:mainApkListPersistenceDebugAndroidTest'
+mainApkListPersistenceDynamicProfile: task ':app:mainApkListPersistenceDynamicProfile'
+mainApkListPersistenceDynamicRelease: task ':app:mainApkListPersistenceDynamicRelease'
+mainApkListPersistenceProfile: task ':app:mainApkListPersistenceProfile'
+mainApkListPersistenceRelease: task ':app:mainApkListPersistenceRelease'
+makeApkFromBundleForDebug: task ':app:makeApkFromBundleForDebug'
+makeApkFromBundleForDynamicProfile: task ':app:makeApkFromBundleForDynamicProfile'
+makeApkFromBundleForDynamicRelease: task ':app:makeApkFromBundleForDynamicRelease'
+makeApkFromBundleForProfile: task ':app:makeApkFromBundleForProfile'
+makeApkFromBundleForRelease: task ':app:makeApkFromBundleForRelease'
+mergeDebugAndroidTestAssets: task ':app:mergeDebugAndroidTestAssets'
+mergeDebugAndroidTestJniLibFolders: task ':app:mergeDebugAndroidTestJniLibFolders'
+mergeDebugAndroidTestResources: task ':app:mergeDebugAndroidTestResources'
+mergeDebugAndroidTestShaders: task ':app:mergeDebugAndroidTestShaders'
+mergeDebugAssets: task ':app:mergeDebugAssets'
+mergeDebugJniLibFolders: task ':app:mergeDebugJniLibFolders'
+mergeDebugResources: task ':app:mergeDebugResources'
+mergeDebugShaders: task ':app:mergeDebugShaders'
+mergeDynamicProfileAssets: task ':app:mergeDynamicProfileAssets'
+mergeDynamicProfileJniLibFolders: task ':app:mergeDynamicProfileJniLibFolders'
+mergeDynamicProfileResources: task ':app:mergeDynamicProfileResources'
+mergeDynamicProfileShaders: task ':app:mergeDynamicProfileShaders'
+mergeDynamicReleaseAssets: task ':app:mergeDynamicReleaseAssets'
+mergeDynamicReleaseJniLibFolders: task ':app:mergeDynamicReleaseJniLibFolders'
+mergeDynamicReleaseResources: task ':app:mergeDynamicReleaseResources'
+mergeDynamicReleaseShaders: task ':app:mergeDynamicReleaseShaders'
+mergeProfileAssets: task ':app:mergeProfileAssets'
+mergeProfileJniLibFolders: task ':app:mergeProfileJniLibFolders'
+mergeProfileResources: task ':app:mergeProfileResources'
+mergeProfileShaders: task ':app:mergeProfileShaders'
+mergeReleaseAssets: task ':app:mergeReleaseAssets'
+mergeReleaseJniLibFolders: task ':app:mergeReleaseJniLibFolders'
+mergeReleaseResources: task ':app:mergeReleaseResources'
+mergeReleaseShaders: task ':app:mergeReleaseShaders'
+modelRegistry: org.gradle.model.internal.registry.DefaultModelRegistry@78d4bee9
+modelSchemaStore: org.gradle.model.internal.manage.schema.extract.DefaultModelSchemaStore@3a6ee0bd
+module: org.gradle.api.internal.artifacts.ProjectBackedModule@7841fa65
+name: app
+normalization: org.gradle.normalization.internal.DefaultInputNormalizationHandler_Decorated@b98ae15
+objects: org.gradle.api.internal.model.DefaultObjectFactory@dcf2f2b
+org.gradle.jvmargs: -Xmx1536M
+packageAppClassesDebug: task ':app:packageAppClassesDebug'
+packageAppClassesDebugAndroidTest: task ':app:packageAppClassesDebugAndroidTest'
+packageAppClassesDebugUnitTest: task ':app:packageAppClassesDebugUnitTest'
+packageAppClassesDynamicProfile: task ':app:packageAppClassesDynamicProfile'
+packageAppClassesDynamicProfileUnitTest: task ':app:packageAppClassesDynamicProfileUnitTest'
+packageAppClassesDynamicRelease: task ':app:packageAppClassesDynamicRelease'
+packageAppClassesDynamicReleaseUnitTest: task ':app:packageAppClassesDynamicReleaseUnitTest'
+packageAppClassesProfile: task ':app:packageAppClassesProfile'
+packageAppClassesProfileUnitTest: task ':app:packageAppClassesProfileUnitTest'
+packageAppClassesRelease: task ':app:packageAppClassesRelease'
+packageAppClassesReleaseUnitTest: task ':app:packageAppClassesReleaseUnitTest'
+packageDebug: task ':app:packageDebug'
+packageDebugAndroidTest: task ':app:packageDebugAndroidTest'
+packageDebugBundle: task ':app:packageDebugBundle'
+packageDebugUniversalApk: task ':app:packageDebugUniversalApk'
+packageDynamicProfile: task ':app:packageDynamicProfile'
+packageDynamicProfileBundle: task ':app:packageDynamicProfileBundle'
+packageDynamicProfileUniversalApk: task ':app:packageDynamicProfileUniversalApk'
+packageDynamicRelease: task ':app:packageDynamicRelease'
+packageDynamicReleaseBundle: task ':app:packageDynamicReleaseBundle'
+packageDynamicReleaseUniversalApk: task ':app:packageDynamicReleaseUniversalApk'
+packageProfile: task ':app:packageProfile'
+packageProfileBundle: task ':app:packageProfileBundle'
+packageProfileUniversalApk: task ':app:packageProfileUniversalApk'
+packageRelease: task ':app:packageRelease'
+packageReleaseBundle: task ':app:packageReleaseBundle'
+packageReleaseUniversalApk: task ':app:packageReleaseUniversalApk'
+parent: root project 'android'
+parentIdentifier: root project 'android'
+path: :app
+pluginManager: org.gradle.api.internal.plugins.DefaultPluginManager_Decorated@54cdc4e1
+plugins: [org.gradle.api.plugins.HelpTasksPlugin@9b31b67, com.android.build.gradle.api.AndroidBasePlugin@4795f442, org.gradle.language.base.plugins.LifecycleBasePlugin@33d72dec, org.gradle.api.plugins.BasePlugin@9070dbb, org.gradle.api.plugins.ReportingBasePlugin@18fe47df, org.gradle.api.plugins.JavaBasePlugin@70a18766, com.android.build.gradle.AppPlugin@7a936cd3, FlutterPlugin@4bc8dcef]
+preBuild: task ':app:preBuild'
+preDebugAndroidTestBuild: task ':app:preDebugAndroidTestBuild'
+preDebugBuild: task ':app:preDebugBuild'
+preDebugUnitTestBuild: task ':app:preDebugUnitTestBuild'
+preDynamicProfileBuild: task ':app:preDynamicProfileBuild'
+preDynamicProfileUnitTestBuild: task ':app:preDynamicProfileUnitTestBuild'
+preDynamicReleaseBuild: task ':app:preDynamicReleaseBuild'
+preDynamicReleaseUnitTestBuild: task ':app:preDynamicReleaseUnitTestBuild'
+preProfileBuild: task ':app:preProfileBuild'
+preProfileUnitTestBuild: task ':app:preProfileUnitTestBuild'
+preReleaseBuild: task ':app:preReleaseBuild'
+preReleaseUnitTestBuild: task ':app:preReleaseUnitTestBuild'
+prepareLintJar: task ':app:prepareLintJar'
+processDebugAndroidTestJavaRes: task ':app:processDebugAndroidTestJavaRes'
+processDebugAndroidTestManifest: task ':app:processDebugAndroidTestManifest'
+processDebugAndroidTestResources: task ':app:processDebugAndroidTestResources'
+processDebugJavaRes: task ':app:processDebugJavaRes'
+processDebugManifest: task ':app:processDebugManifest'
+processDebugResources: task ':app:processDebugResources'
+processDebugUnitTestJavaRes: task ':app:processDebugUnitTestJavaRes'
+processDynamicProfileJavaRes: task ':app:processDynamicProfileJavaRes'
+processDynamicProfileManifest: task ':app:processDynamicProfileManifest'
+processDynamicProfileResources: task ':app:processDynamicProfileResources'
+processDynamicProfileUnitTestJavaRes: task ':app:processDynamicProfileUnitTestJavaRes'
+processDynamicReleaseJavaRes: task ':app:processDynamicReleaseJavaRes'
+processDynamicReleaseManifest: task ':app:processDynamicReleaseManifest'
+processDynamicReleaseResources: task ':app:processDynamicReleaseResources'
+processDynamicReleaseUnitTestJavaRes: task ':app:processDynamicReleaseUnitTestJavaRes'
+processOperations: org.gradle.api.internal.file.DefaultFileOperations@14bbebe1
+processProfileJavaRes: task ':app:processProfileJavaRes'
+processProfileManifest: task ':app:processProfileManifest'
+processProfileResources: task ':app:processProfileResources'
+processProfileUnitTestJavaRes: task ':app:processProfileUnitTestJavaRes'
+processReleaseJavaRes: task ':app:processReleaseJavaRes'
+processReleaseManifest: task ':app:processReleaseManifest'
+processReleaseResources: task ':app:processReleaseResources'
+processReleaseUnitTestJavaRes: task ':app:processReleaseUnitTestJavaRes'
+project: project ':app'
+projectConfigurator: org.gradle.api.internal.project.BuildOperationCrossProjectConfigurator@2162aaf6
+projectDir: E:\flutter\getstart\myapp\android\app
+projectEvaluationBroadcaster: ProjectEvaluationListener broadcast
+projectEvaluator: org.gradle.configuration.project.LifecycleProjectEvaluator@5d04830b
+projectPath: :app
+projectRegistry: org.gradle.api.internal.project.DefaultProjectRegistry@3c10998c
+properties: {...}
+providers: org.gradle.api.internal.provider.DefaultProviderFactory@628b1531
+reportBuildArtifactsDebug: task ':app:reportBuildArtifactsDebug'
+reportBuildArtifactsDynamicProfile: task ':app:reportBuildArtifactsDynamicProfile'
+reportBuildArtifactsDynamicRelease: task ':app:reportBuildArtifactsDynamicRelease'
+reportBuildArtifactsProfile: task ':app:reportBuildArtifactsProfile'
+reportBuildArtifactsRelease: task ':app:reportBuildArtifactsRelease'
+reportSourceSetTransformAndroidTest: task ':app:reportSourceSetTransformAndroidTest'
+reportSourceSetTransformAndroidTestDebug: task ':app:reportSourceSetTransformAndroidTestDebug'
+reportSourceSetTransformDebug: task ':app:reportSourceSetTransformDebug'
+reportSourceSetTransformDynamicProfile: task ':app:reportSourceSetTransformDynamicProfile'
+reportSourceSetTransformDynamicRelease: task ':app:reportSourceSetTransformDynamicRelease'
+reportSourceSetTransformMain: task ':app:reportSourceSetTransformMain'
+reportSourceSetTransformProfile: task ':app:reportSourceSetTransformProfile'
+reportSourceSetTransformRelease: task ':app:reportSourceSetTransformRelease'
+reportSourceSetTransformTest: task ':app:reportSourceSetTransformTest'
+reportSourceSetTransformTestDebug: task ':app:reportSourceSetTransformTestDebug'
+reportSourceSetTransformTestDynamicProfile: task ':app:reportSourceSetTransformTestDynamicProfile'
+reportSourceSetTransformTestDynamicRelease: task ':app:reportSourceSetTransformTestDynamicRelease'
+reportSourceSetTransformTestProfile: task ':app:reportSourceSetTransformTestProfile'
+reportSourceSetTransformTestRelease: task ':app:reportSourceSetTransformTestRelease'
+reporting: org.gradle.api.reporting.ReportingExtension_Decorated@31321545
+reportsDir: E:\flutter\getstart\myapp\build\app\reports
+repositories: repository container
+resolveConfigAttr: task ':app:resolveConfigAttr'
+resourceLoader: org.gradle.internal.resource.transfer.DefaultUriTextResourceLoader@5333c8f
+resources: org.gradle.api.internal.resources.DefaultResourceHandler@7cd6fbf9
+rootDir: E:\flutter\getstart\myapp\android
+rootProject: root project 'android'
+script: false
+scriptHandlerFactory: org.gradle.api.internal.initialization.DefaultScriptHandlerFactory@44b2c116
+scriptPluginFactory: org.gradle.configuration.ScriptPluginFactorySelector@658b6cf8
+serviceRegistryFactory: org.gradle.internal.service.scopes.ProjectScopeServices$4@79c0e382
+services: ProjectScopeServices
+signingReport: task ':app:signingReport'
+sourceCompatibility: 1.8
+sourceSets: SourceSet container
+splitsDiscoveryTaskDebug: task ':app:splitsDiscoveryTaskDebug'
+splitsDiscoveryTaskDynamicProfile: task ':app:splitsDiscoveryTaskDynamicProfile'
+splitsDiscoveryTaskDynamicRelease: task ':app:splitsDiscoveryTaskDynamicRelease'
+splitsDiscoveryTaskProfile: task ':app:splitsDiscoveryTaskProfile'
+splitsDiscoveryTaskRelease: task ':app:splitsDiscoveryTaskRelease'
+standardOutputCapture: org.gradle.internal.logging.services.DefaultLoggingManager@5451b152
+state: project state 'EXECUTED'
+status: integration
+subprojects: []
+targetCompatibility: 1.8
+tasks: task set
+test: task ':app:test'
+testDebugUnitTest: task ':app:testDebugUnitTest'
+testDynamicProfileUnitTest: task ':app:testDynamicProfileUnitTest'
+testDynamicReleaseUnitTest: task ':app:testDynamicReleaseUnitTest'
+testProfileUnitTest: task ':app:testProfileUnitTest'
+testReleaseUnitTest: task ':app:testReleaseUnitTest'
+testReportDir: E:\flutter\getstart\myapp\build\app\reports\tests
+testReportDirName: tests
+testResultsDir: E:\flutter\getstart\myapp\build\app\test-results
+testResultsDirName: test-results
+transformClassesWithDexBuilderForDebug: task ':app:transformClassesWithDexBuilderForDebug'
+transformClassesWithDexBuilderForDebugAndroidTest: task ':app:transformClassesWithDexBuilderForDebugAndroidTest'
+transformClassesWithDexBuilderForDynamicProfile: task ':app:transformClassesWithDexBuilderForDynamicProfile'
+transformClassesWithDexBuilderForDynamicRelease: task ':app:transformClassesWithDexBuilderForDynamicRelease'
+transformClassesWithDexBuilderForProfile: task ':app:transformClassesWithDexBuilderForProfile'
+transformClassesWithDexBuilderForRelease: task ':app:transformClassesWithDexBuilderForRelease'
+transformDexArchiveWithDexMergerForDebug: task ':app:transformDexArchiveWithDexMergerForDebug'
+transformDexArchiveWithDexMergerForDebugAndroidTest: task ':app:transformDexArchiveWithDexMergerForDebugAndroidTest'
+transformDexArchiveWithDexMergerForDynamicProfile: task ':app:transformDexArchiveWithDexMergerForDynamicProfile'
+transformDexArchiveWithDexMergerForDynamicRelease: task ':app:transformDexArchiveWithDexMergerForDynamicRelease'
+transformDexArchiveWithDexMergerForProfile: task ':app:transformDexArchiveWithDexMergerForProfile'
+transformDexArchiveWithDexMergerForRelease: task ':app:transformDexArchiveWithDexMergerForRelease'
+transformDexArchiveWithExternalLibsDexMergerForDebug: task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'
+transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest: task ':app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest'
+transformDexArchiveWithExternalLibsDexMergerForDynamicProfile: task ':app:transformDexArchiveWithExternalLibsDexMergerForDynamicProfile'
+transformDexArchiveWithExternalLibsDexMergerForDynamicRelease: task ':app:transformDexArchiveWithExternalLibsDexMergerForDynamicRelease'
+transformDexArchiveWithExternalLibsDexMergerForProfile: task ':app:transformDexArchiveWithExternalLibsDexMergerForProfile'
+transformDexArchiveWithExternalLibsDexMergerForRelease: task ':app:transformDexArchiveWithExternalLibsDexMergerForRelease'
+transformNativeLibsWithMergeJniLibsForDebug: task ':app:transformNativeLibsWithMergeJniLibsForDebug'
+transformNativeLibsWithMergeJniLibsForDebugAndroidTest: task ':app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest'
+transformNativeLibsWithMergeJniLibsForDynamicProfile: task ':app:transformNativeLibsWithMergeJniLibsForDynamicProfile'
+transformNativeLibsWithMergeJniLibsForDynamicRelease: task ':app:transformNativeLibsWithMergeJniLibsForDynamicRelease'
+transformNativeLibsWithMergeJniLibsForProfile: task ':app:transformNativeLibsWithMergeJniLibsForProfile'
+transformNativeLibsWithMergeJniLibsForRelease: task ':app:transformNativeLibsWithMergeJniLibsForRelease'
+transformResourcesWithMergeJavaResForDebug: task ':app:transformResourcesWithMergeJavaResForDebug'
+transformResourcesWithMergeJavaResForDebugAndroidTest: task ':app:transformResourcesWithMergeJavaResForDebugAndroidTest'
+transformResourcesWithMergeJavaResForDebugUnitTest: task ':app:transformResourcesWithMergeJavaResForDebugUnitTest'
+transformResourcesWithMergeJavaResForDynamicProfile: task ':app:transformResourcesWithMergeJavaResForDynamicProfile'
+transformResourcesWithMergeJavaResForDynamicProfileUnitTest: task ':app:transformResourcesWithMergeJavaResForDynamicProfileUnitTest'
+transformResourcesWithMergeJavaResForDynamicRelease: task ':app:transformResourcesWithMergeJavaResForDynamicRelease'
+transformResourcesWithMergeJavaResForDynamicReleaseUnitTest: task ':app:transformResourcesWithMergeJavaResForDynamicReleaseUnitTest'
+transformResourcesWithMergeJavaResForProfile: task ':app:transformResourcesWithMergeJavaResForProfile'
+transformResourcesWithMergeJavaResForProfileUnitTest: task ':app:transformResourcesWithMergeJavaResForProfileUnitTest'
+transformResourcesWithMergeJavaResForRelease: task ':app:transformResourcesWithMergeJavaResForRelease'
+transformResourcesWithMergeJavaResForReleaseUnitTest: task ':app:transformResourcesWithMergeJavaResForReleaseUnitTest'
+uninstallAll: task ':app:uninstallAll'
+uninstallDebug: task ':app:uninstallDebug'
+uninstallDebugAndroidTest: task ':app:uninstallDebugAndroidTest'
+uninstallDynamicProfile: task ':app:uninstallDynamicProfile'
+uninstallDynamicRelease: task ':app:uninstallDynamicRelease'
+uninstallProfile: task ':app:uninstallProfile'
+uninstallRelease: task ':app:uninstallRelease'
+validateSigningDebug: task ':app:validateSigningDebug'
+validateSigningDebugAndroidTest: task ':app:validateSigningDebugAndroidTest'
+validateSigningDynamicProfile: task ':app:validateSigningDynamicProfile'
+validateSigningDynamicRelease: task ':app:validateSigningDynamicRelease'
+validateSigningProfile: task ':app:validateSigningProfile'
+validateSigningRelease: task ':app:validateSigningRelease'
+version: unspecified
+writeDebugApplicationId: task ':app:writeDebugApplicationId'
+writeDynamicProfileApplicationId: task ':app:writeDynamicProfileApplicationId'
+writeDynamicReleaseApplicationId: task ':app:writeDynamicReleaseApplicationId'
+writeProfileApplicationId: task ':app:writeProfileApplicationId'
+writeReleaseApplicationId: task ':app:writeReleaseApplicationId'
+1 actionable task: 1 executed

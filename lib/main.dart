@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/account.dart';
 import 'package:myapp/pages/style.dart';
 
 void main() => runApp(MyApp());

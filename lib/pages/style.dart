@@ -230,7 +230,7 @@ class Demo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('style demo 2'),
+        title: Text('style demo'),
       ),
       body: textOverflow,
     );

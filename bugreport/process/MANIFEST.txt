@@ -1,0 +1,950 @@
+[
+  {
+    "type": "run",
+    "body": {
+      "pid": 3544,
+      "basename": "000.git.3544",
+      "command": [
+        "git",
+        "log",
+        "-n",
+        "1",
+        "--pretty=format:%H"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 4240,
+      "basename": "001.git.4240",
+      "command": [
+        "git",
+        "describe",
+        "--match",
+        "v*.*.*",
+        "--first-parent",
+        "--long",
+        "--tags"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 3828,
+      "basename": "002.git.3828",
+      "command": [
+        "git",
+        "rev-parse",
+        "--abbrev-ref",
+        "--symbolic",
+        "@{u}"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 208,
+      "basename": "003.git.208",
+      "command": [
+        "git",
+        "ls-remote",
+        "--get-url",
+        "origin"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 6932,
+      "basename": "004.git.6932",
+      "command": [
+        "git",
+        "log",
+        "-n",
+        "1",
+        "--pretty=format:%ad",
+        "--date=iso"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 2244,
+      "basename": "005.git.2244",
+      "command": [
+        "git",
+        "rev-parse",
+        "--abbrev-ref",
+        "HEAD"
+      ],
+      "workingDirectory": "C:\\flutter",
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 5352,
+      "basename": "006.ver.5352",
+      "command": [
+        "ver"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": true,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "can_run",
+    "body": {
+      "executable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+      "result": true
+    }
+  },
+  {
+    "type": "can_run",
+    "body": {
+      "executable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.3\\aapt",
+      "result": true
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 2672,
+      "basename": "009.adb.exe.2672",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "devices",
+        "-l"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 2864,
+      "basename": "010.adb.exe.2864",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "getprop"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "iso-8859-1",
+      "stderrEncoding": "iso-8859-1",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "can_run",
+    "body": {
+      "executable": "C:\\Program Files\\Android\\Android Studio\\jre\\bin\\java",
+      "result": true
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 8976,
+      "basename": "012.java.8976",
+      "command": [
+        "C:\\Program Files\\Android\\Android Studio\\jre\\bin\\java",
+        "-version"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "can_run",
+    "body": {
+      "executable": "C:\\Program Files\\Android\\Android Studio\\jre\\bin\\java",
+      "result": true
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 4004,
+      "basename": "014.java.4004",
+      "command": [
+        "C:\\Program Files\\Android\\Android Studio\\jre\\bin\\java",
+        "-version"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 4256,
+      "basename": "015.gradlew.bat.4256",
+      "command": [
+        "E:\\flutter\\getstart\\myapp\\android\\gradlew.bat",
+        "-v"
+      ],
+      "environment": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "ANDROID_HOME": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+        "ASL.LOG": "Destination=file",
+        "CACHE_DIR": "C:\\flutter\\bin\\cache",
+        "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+        "COMMONPROGRAMFILES(X86)": "C:\\Program Files (x86)\\Common Files",
+        "COMMONPROGRAMW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "PC-20190310TGOI",
+        "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+        "DART": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\dart.exe",
+        "DART_INSTALLED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_REQUIRED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_SDK_PATH": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "ENGINE_STAMP": "C:\\flutter\\bin\\cache\\engine-dart-sdk.stamp",
+        "ENGINE_VERSION_PATH": "C:\\flutter\\bin\\internal\\engine.version",
+        "FLUTTER_ROOT": "C:\\flutter",
+        "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn",
+        "FLUTTER_TOOLS_DIR": "C:\\flutter\\packages\\flutter_tools",
+        "HOMEDRIVE": "C:",
+        "HOMEPATH": "\\Users\\Administrator",
+        "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+        "LOGONSERVER": "\\\\PC-20190310TGOI",
+        "MINGIT_PATH": "C:\\flutter\\bin\\mingit\\cmd",
+        "NEWER_FILE": "pubspec.lock",
+        "NUMBER_OF_PROCESSORS": "4",
+        "OS": "Windows_NT",
+        "PATH": "C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Administrator\\AppData\\Roaming\\npm;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\tools;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Python27\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\bin;C:\\flutter\\bin",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "9e09",
+        "PROGRAMDATA": "C:\\ProgramData",
+        "PROGRAMFILES": "C:\\Program Files",
+        "PROGRAMFILES(X86)": "C:\\Program Files (x86)",
+        "PROGRAMW6432": "C:\\Program Files",
+        "PROMPT": "$P$G",
+        "PSMODULEPATH": "d:\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+        "PUB": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\pub.bat",
+        "PUBLIC": "C:\\Users\\Public",
+        "PUBSPEC_LOCK_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.lock",
+        "PUBSPEC_LOCK_TIMESTAMP": "2019/05/06 11:24",
+        "PUBSPEC_YAML_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.yaml",
+        "PUBSPEC_YAML_TIMESTAMP": "2019/05/06 11:19",
+        "PUB_CACHE_PATH": "C:\\flutter\\.pub-cache",
+        "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+        "REVISION": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SCRIPT_PATH": "C:\\flutter\\packages\\flutter_tools\\bin\\flutter_tools.dart",
+        "SESSIONNAME": "Console",
+        "SNAPSHOT_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.snapshot",
+        "STAMP_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.stamp",
+        "STAMP_VALUE": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SYSTEMDRIVE": "C:",
+        "SYSTEMROOT": "C:\\Windows",
+        "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "TMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "USERDOMAIN": "PC-20190310TGOI",
+        "USERDOMAIN_ROAMINGPROFILE": "PC-20190310TGOI",
+        "USERNAME": "Administrator",
+        "USERPROFILE": "C:\\Users\\Administrator",
+        "WINDIR": "C:\\Windows",
+        "TERM_PROGRAM": "vscode",
+        "TERM_PROGRAM_VERSION": "1.33.1",
+        "LANG": "zh_CN.UTF-8",
+        "JAVA_HOME": "C:\\Program Files\\Android\\Android Studio\\jre"
+      },
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 6448,
+      "basename": "016.gradlew.bat.6448",
+      "command": [
+        "E:\\flutter\\getstart\\myapp\\android\\gradlew.bat",
+        "app:properties"
+      ],
+      "workingDirectory": "E:\\flutter\\getstart\\myapp\\android",
+      "environment": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "ANDROID_HOME": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+        "ASL.LOG": "Destination=file",
+        "CACHE_DIR": "C:\\flutter\\bin\\cache",
+        "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+        "COMMONPROGRAMFILES(X86)": "C:\\Program Files (x86)\\Common Files",
+        "COMMONPROGRAMW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "PC-20190310TGOI",
+        "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+        "DART": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\dart.exe",
+        "DART_INSTALLED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_REQUIRED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_SDK_PATH": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "ENGINE_STAMP": "C:\\flutter\\bin\\cache\\engine-dart-sdk.stamp",
+        "ENGINE_VERSION_PATH": "C:\\flutter\\bin\\internal\\engine.version",
+        "FLUTTER_ROOT": "C:\\flutter",
+        "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn",
+        "FLUTTER_TOOLS_DIR": "C:\\flutter\\packages\\flutter_tools",
+        "HOMEDRIVE": "C:",
+        "HOMEPATH": "\\Users\\Administrator",
+        "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+        "LOGONSERVER": "\\\\PC-20190310TGOI",
+        "MINGIT_PATH": "C:\\flutter\\bin\\mingit\\cmd",
+        "NEWER_FILE": "pubspec.lock",
+        "NUMBER_OF_PROCESSORS": "4",
+        "OS": "Windows_NT",
+        "PATH": "C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Administrator\\AppData\\Roaming\\npm;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\tools;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Python27\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\bin;C:\\flutter\\bin",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "9e09",
+        "PROGRAMDATA": "C:\\ProgramData",
+        "PROGRAMFILES": "C:\\Program Files",
+        "PROGRAMFILES(X86)": "C:\\Program Files (x86)",
+        "PROGRAMW6432": "C:\\Program Files",
+        "PROMPT": "$P$G",
+        "PSMODULEPATH": "d:\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+        "PUB": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\pub.bat",
+        "PUBLIC": "C:\\Users\\Public",
+        "PUBSPEC_LOCK_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.lock",
+        "PUBSPEC_LOCK_TIMESTAMP": "2019/05/06 11:24",
+        "PUBSPEC_YAML_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.yaml",
+        "PUBSPEC_YAML_TIMESTAMP": "2019/05/06 11:19",
+        "PUB_CACHE_PATH": "C:\\flutter\\.pub-cache",
+        "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+        "REVISION": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SCRIPT_PATH": "C:\\flutter\\packages\\flutter_tools\\bin\\flutter_tools.dart",
+        "SESSIONNAME": "Console",
+        "SNAPSHOT_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.snapshot",
+        "STAMP_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.stamp",
+        "STAMP_VALUE": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SYSTEMDRIVE": "C:",
+        "SYSTEMROOT": "C:\\Windows",
+        "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "TMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "USERDOMAIN": "PC-20190310TGOI",
+        "USERDOMAIN_ROAMINGPROFILE": "PC-20190310TGOI",
+        "USERNAME": "Administrator",
+        "USERPROFILE": "C:\\Users\\Administrator",
+        "WINDIR": "C:\\Windows",
+        "TERM_PROGRAM": "vscode",
+        "TERM_PROGRAM_VERSION": "1.33.1",
+        "LANG": "zh_CN.UTF-8",
+        "JAVA_HOME": "C:\\Program Files\\Android\\Android Studio\\jre"
+      },
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 2628,
+      "basename": "017.gradlew.bat.2628",
+      "command": [
+        "E:\\flutter\\getstart\\myapp\\android\\gradlew.bat",
+        "app:tasks",
+        "--all",
+        "--console=auto"
+      ],
+      "workingDirectory": "E:\\flutter\\getstart\\myapp\\android",
+      "environment": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "ANDROID_HOME": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+        "ASL.LOG": "Destination=file",
+        "CACHE_DIR": "C:\\flutter\\bin\\cache",
+        "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+        "COMMONPROGRAMFILES(X86)": "C:\\Program Files (x86)\\Common Files",
+        "COMMONPROGRAMW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "PC-20190310TGOI",
+        "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+        "DART": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\dart.exe",
+        "DART_INSTALLED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_REQUIRED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_SDK_PATH": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "ENGINE_STAMP": "C:\\flutter\\bin\\cache\\engine-dart-sdk.stamp",
+        "ENGINE_VERSION_PATH": "C:\\flutter\\bin\\internal\\engine.version",
+        "FLUTTER_ROOT": "C:\\flutter",
+        "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn",
+        "FLUTTER_TOOLS_DIR": "C:\\flutter\\packages\\flutter_tools",
+        "HOMEDRIVE": "C:",
+        "HOMEPATH": "\\Users\\Administrator",
+        "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+        "LOGONSERVER": "\\\\PC-20190310TGOI",
+        "MINGIT_PATH": "C:\\flutter\\bin\\mingit\\cmd",
+        "NEWER_FILE": "pubspec.lock",
+        "NUMBER_OF_PROCESSORS": "4",
+        "OS": "Windows_NT",
+        "PATH": "C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Administrator\\AppData\\Roaming\\npm;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\tools;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Python27\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\bin;C:\\flutter\\bin",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "9e09",
+        "PROGRAMDATA": "C:\\ProgramData",
+        "PROGRAMFILES": "C:\\Program Files",
+        "PROGRAMFILES(X86)": "C:\\Program Files (x86)",
+        "PROGRAMW6432": "C:\\Program Files",
+        "PROMPT": "$P$G",
+        "PSMODULEPATH": "d:\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+        "PUB": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\pub.bat",
+        "PUBLIC": "C:\\Users\\Public",
+        "PUBSPEC_LOCK_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.lock",
+        "PUBSPEC_LOCK_TIMESTAMP": "2019/05/06 11:24",
+        "PUBSPEC_YAML_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.yaml",
+        "PUBSPEC_YAML_TIMESTAMP": "2019/05/06 11:19",
+        "PUB_CACHE_PATH": "C:\\flutter\\.pub-cache",
+        "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+        "REVISION": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SCRIPT_PATH": "C:\\flutter\\packages\\flutter_tools\\bin\\flutter_tools.dart",
+        "SESSIONNAME": "Console",
+        "SNAPSHOT_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.snapshot",
+        "STAMP_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.stamp",
+        "STAMP_VALUE": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SYSTEMDRIVE": "C:",
+        "SYSTEMROOT": "C:\\Windows",
+        "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "TMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "USERDOMAIN": "PC-20190310TGOI",
+        "USERDOMAIN_ROAMINGPROFILE": "PC-20190310TGOI",
+        "USERNAME": "Administrator",
+        "USERPROFILE": "C:\\Users\\Administrator",
+        "WINDIR": "C:\\Windows",
+        "TERM_PROGRAM": "vscode",
+        "TERM_PROGRAM_VERSION": "1.33.1",
+        "LANG": "zh_CN.UTF-8",
+        "JAVA_HOME": "C:\\Program Files\\Android\\Android Studio\\jre"
+      },
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 3860,
+      "basename": "018.aapt.3860",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.3\\aapt",
+        "dump",
+        "xmltree",
+        "E:\\flutter\\getstart\\myapp\\build\\app\\outputs\\apk\\app.apk",
+        "AndroidManifest.xml"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 3008,
+      "basename": "019.adb.exe.3008",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "-x",
+        "logcat",
+        "-v",
+        "time",
+        "-t",
+        "1"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 5192,
+      "basename": "020.adb.exe.5192",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "-x",
+        "logcat",
+        "-v",
+        "time"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "mode": "normal",
+      "daemon": true,
+      "notResponding": false,
+      "exitCode": -1
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 484,
+      "basename": "021.adb.exe.484",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "version"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 1252,
+      "basename": "022.adb.exe.1252",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "start-server"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 1332,
+      "basename": "023.gradlew.bat.1332",
+      "command": [
+        "E:\\flutter\\getstart\\myapp\\android\\gradlew.bat",
+        "-q",
+        "-Ptarget=E:\\flutter\\getstart\\myapp\\lib/main.dart",
+        "-Ptrack-widget-creation=false",
+        "-Pcompilation-trace-file=compilation.txt",
+        "-Pfilesystem-scheme=org-dartlang-root",
+        "assembleDebug"
+      ],
+      "workingDirectory": "E:\\flutter\\getstart\\myapp\\android",
+      "environment": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "ANDROID_HOME": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+        "ASL.LOG": "Destination=file",
+        "CACHE_DIR": "C:\\flutter\\bin\\cache",
+        "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+        "COMMONPROGRAMFILES(X86)": "C:\\Program Files (x86)\\Common Files",
+        "COMMONPROGRAMW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "PC-20190310TGOI",
+        "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+        "DART": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\dart.exe",
+        "DART_INSTALLED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_REQUIRED_VERSION": "c63d1cf9c9ba8c7d8546f24c1248433bdf827153",
+        "DART_SDK_PATH": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "ENGINE_STAMP": "C:\\flutter\\bin\\cache\\engine-dart-sdk.stamp",
+        "ENGINE_VERSION_PATH": "C:\\flutter\\bin\\internal\\engine.version",
+        "FLUTTER_ROOT": "C:\\flutter",
+        "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn",
+        "FLUTTER_TOOLS_DIR": "C:\\flutter\\packages\\flutter_tools",
+        "HOMEDRIVE": "C:",
+        "HOMEPATH": "\\Users\\Administrator",
+        "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+        "LOGONSERVER": "\\\\PC-20190310TGOI",
+        "MINGIT_PATH": "C:\\flutter\\bin\\mingit\\cmd",
+        "NEWER_FILE": "pubspec.lock",
+        "NUMBER_OF_PROCESSORS": "4",
+        "OS": "Windows_NT",
+        "PATH": "C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\Program Files (x86)\\NetSarang\\Xftp 6\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Administrator\\AppData\\Roaming\\npm;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\tools;C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Python27\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\bin;C:\\flutter\\bin",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "9e09",
+        "PROGRAMDATA": "C:\\ProgramData",
+        "PROGRAMFILES": "C:\\Program Files",
+        "PROGRAMFILES(X86)": "C:\\Program Files (x86)",
+        "PROGRAMW6432": "C:\\Program Files",
+        "PROMPT": "$P$G",
+        "PSMODULEPATH": "d:\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+        "PUB": "C:\\flutter\\bin\\cache\\dart-sdk\\bin\\pub.bat",
+        "PUBLIC": "C:\\Users\\Public",
+        "PUBSPEC_LOCK_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.lock",
+        "PUBSPEC_LOCK_TIMESTAMP": "2019/05/06 11:24",
+        "PUBSPEC_YAML_PATH": "C:\\flutter\\packages\\flutter_tools\\pubspec.yaml",
+        "PUBSPEC_YAML_TIMESTAMP": "2019/05/06 11:19",
+        "PUB_CACHE_PATH": "C:\\flutter\\.pub-cache",
+        "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+        "REVISION": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SCRIPT_PATH": "C:\\flutter\\packages\\flutter_tools\\bin\\flutter_tools.dart",
+        "SESSIONNAME": "Console",
+        "SNAPSHOT_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.snapshot",
+        "STAMP_PATH": "C:\\flutter\\bin\\cache\\flutter_tools.stamp",
+        "STAMP_VALUE": "0ba67226ee62d6c9d663a6f8410fb4b2f1076046",
+        "SYSTEMDRIVE": "C:",
+        "SYSTEMROOT": "C:\\Windows",
+        "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "TMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+        "USERDOMAIN": "PC-20190310TGOI",
+        "USERDOMAIN_ROAMINGPROFILE": "PC-20190310TGOI",
+        "USERNAME": "Administrator",
+        "USERPROFILE": "C:\\Users\\Administrator",
+        "WINDIR": "C:\\Windows",
+        "TERM_PROGRAM": "vscode",
+        "TERM_PROGRAM_VERSION": "1.33.1",
+        "LANG": "zh_CN.UTF-8",
+        "JAVA_HOME": "C:\\Program Files\\Android\\Android Studio\\jre",
+        "FLUTTER_ALREADY_LOCKED": "true"
+      },
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "mode": "normal",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 1336,
+      "basename": "024.aapt.1336",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.3\\aapt",
+        "dump",
+        "xmltree",
+        "E:\\flutter\\getstart\\myapp\\build\\app\\outputs\\apk\\app.apk",
+        "AndroidManifest.xml"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 4024,
+      "basename": "025.adb.exe.4024",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "am",
+        "force-stop",
+        "com.example.myapp"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "mode": "normal",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 1400,
+      "basename": "026.adb.exe.1400",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "pm",
+        "list",
+        "packages",
+        "com.example.myapp"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 1652,
+      "basename": "027.adb.exe.1652",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "cat",
+        "/data/local/tmp/sky.com.example.myapp.sha1"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 2308,
+      "basename": "028.adb.exe.2308",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "version"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 8324,
+      "basename": "029.adb.exe.8324",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "start-server"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 3504,
+      "basename": "030.adb.exe.3504",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "install",
+        "-t",
+        "-r",
+        "E:\\flutter\\getstart\\myapp\\build\\app\\outputs\\apk\\app.apk"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 8172,
+      "basename": "031.adb.exe.8172",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "echo",
+        "-n",
+        "6385608150009385c19e9524efac5d5afc26ef7d",
+        ">",
+        "/data/local/tmp/sky.com.example.myapp.sha1"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 6772,
+      "basename": "032.adb.exe.6772",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "shell",
+        "am",
+        "start",
+        "-a",
+        "android.intent.action.RUN",
+        "-f",
+        "0x20000000",
+        "--ez",
+        "enable-background-compilation",
+        "true",
+        "--ez",
+        "enable-dart-profiling",
+        "true",
+        "--ez",
+        "enable-checked-mode",
+        "true",
+        "--ez",
+        "verify-entry-points",
+        "true",
+        "com.example.myapp/com.example.myapp.MainActivity"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  },
+  {
+    "type": "run",
+    "body": {
+      "pid": 9060,
+      "basename": "033.adb.exe.9060",
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+        "-s",
+        "emulator-5554",
+        "forward",
+        "tcp:0",
+        "tcp:43923"
+      ],
+      "includeParentEnvironment": true,
+      "runInShell": false,
+      "stdoutEncoding": "system",
+      "stderrEncoding": "system",
+      "daemon": false,
+      "notResponding": false,
+      "exitCode": 0
+    }
+  }
+]
