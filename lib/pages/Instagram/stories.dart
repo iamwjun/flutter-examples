@@ -32,7 +32,7 @@ class InstagramStories extends StatelessWidget {
                     image: DecorationImage(
                         fit: BoxFit.fill,
                         image: NetworkImage(
-                            "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006ytbyKly8fvyejqlb27j30ro0rozm3.jpg")),
+                            "https://tva2.sinaimg.cn/crop.0.0.640.640.180/6a6b9a4ejw8ewsdyhql9hj20hs0htjsd.jpg")),
                   ),
                   margin: const EdgeInsets.symmetric(horizontal: 8.0),
                 ),
