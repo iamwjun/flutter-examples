@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/Instagram/home.dart';
-import 'package:myapp/pages/AvailableKittens/AvailableKittens.dart';
+import 'package:myapp/pages/chart/chart.dart';
+import 'package:myapp/pages/chart/schedule.dart';
+import 'package:myapp/pages/chart/slider.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Instagram
       // title: 'Instagram',
       // debugShowCheckedModeBanner: false,
       // theme: ThemeData(
@@ -18,13 +21,40 @@ class MyApp extends StatelessWidget {
       //         title: TextStyle(color: Colors.black, fontFamily: "Aveny")),
       //     textTheme: TextTheme(title: TextStyle(color: Colors.black))),
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        buttonColor: Colors.purple,
-        buttonTheme: ButtonThemeData(
-          textTheme: ButtonTextTheme.primary
-        )
+          primarySwatch: Colors.purple,
+          buttonColor: Colors.purple,
+          buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
+      home: MyHomePage(),
+    );
+  }
+}
+
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      builder: (context) => MySchedule(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Time spent'),
+          leading: Icon(Icons.menu),
+        ),
+        body: Column(
+          children: <Widget>[
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: MyChart(),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(32),
+              child: MySlider(),
+            )
+          ],
+        ),
       ),
-      home: AvailableKittens(),
     );
   }
 }
