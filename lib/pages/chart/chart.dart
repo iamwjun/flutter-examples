@@ -12,7 +12,7 @@ class MyChart extends StatelessWidget {
     return Consumer<MySchedule>(
       builder: (context, schedule, _) => PieChart(
             createData(schedule.stateManagementTime),
-            animate: false,            
+            animate: false,
             defaultRenderer: ArcRendererConfig(
               arcRendererDecorators: [
                 ArcLabelDecorator(
@@ -29,11 +29,28 @@ class MyChart extends StatelessWidget {
   ) {
     final random = new Random();
 
-    final data = [
-      LinearSales('UX', stateMgmtTime),
-      LinearSales('UI', random.nextDouble()),
-      LinearSales('State', random.nextDouble()),
-      LinearSales('Process', random.nextDouble()),
+    final data = [      
+      LinearSales(
+        'UX',
+        0.1,
+        Color.fromOther(color: Color(r: 225, g: 186, b: 136)),
+      ),
+      LinearSales(
+        'UI Programming',
+        0.2,
+        Color.fromOther(color: Color(r: 183, g: 45, b: 64)),
+      ),
+      
+      LinearSales(
+        'Backend',
+        0.3,
+        Color.fromOther(color: Color(r: 120, g: 179, b: 155)),
+      ),
+      LinearSales(
+        'State Management',
+        stateMgmtTime,
+        Color.fromOther(color: Color(r: 40, g: 17, b: 58)),
+      ),
     ];
 
     return [
@@ -41,8 +58,7 @@ class MyChart extends StatelessWidget {
         id: 'Sales',
         domainFn: (LinearSales sales, _) => sales.name,
         measureFn: (LinearSales sales, _) => sales.sales,
-        //colorFn: (LinearSales clickData, _) => Colors.purple,
-        colorFn: (_, __) => MaterialPalette.red.shadeDefault,
+        colorFn: (LinearSales sales, __) => sales.color,
         data: data,
       )
     ];
@@ -52,6 +68,7 @@ class MyChart extends StatelessWidget {
 class LinearSales {
   final String name;
   final double sales;
+  final color;
 
-  LinearSales(this.name, this.sales);
+  LinearSales(this.name, this.sales, this.color);
 }

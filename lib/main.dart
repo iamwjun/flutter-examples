@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       //     textTheme: TextTheme(title: TextStyle(color: Colors.black))),
       theme: ThemeData(
           primarySwatch: Colors.purple,
+          cardColor: Colors.purple,
           buttonColor: Colors.purple,
           buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
       home: MyHomePage(),
