@@ -1,17 +1,23 @@
-# myapp
+English | [简体中文](./README.zh-CN.md)
+## Developed a lot of apps
 
-A new Flutter project.
+The code is in the lib/pages directory.  
+Below is a list and links to related documents:  
 
-## Getting Started
+01 - other directory
+- This is a simple login module and flutter for web devs
+- [simple login](https://github.com/iampawan/FlutterLoginPageBloc)
+- [flutter for web devs](https://flutter.dev/docs/get-started/flutter-for/web-devs)
 
-This project is a starting point for a Flutter application.
+02 - Inastagram directory
+- [Inastagram UI](https://github.com/iampawan/Flutter-Instagram-UI-Clone)
+- [image picker](https://pub.dev/packages/image_picker)
 
-A few resources to get you started if this is your first Flutter project:
+03 - AvailableKittens directory
+- [Learning video](https://www.youtube.com/watch?v=DL0Ix1lnC4w)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-- [Learning path](https://github.com/iampawan/FlutterExampleApps)
+04 - Chart directory
+- Pragmatic State Management in Flutter (Google I/O'19) Completing some code
+- [Learning video](https://www.youtube.com/watch?v=d_m5csmrf7I)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+[all the example apps](https://github.com/iampawan/FlutterExampleApps)
