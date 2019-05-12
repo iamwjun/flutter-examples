@@ -18,6 +18,10 @@ Below is a list and links to related documents:
 
 04 - Chart directory
 - Pragmatic State Management in Flutter (Google I/O'19) Completing some code
+- [charts example](https://google.github.io/charts/flutter/gallery.html)
 - [Learning video](https://www.youtube.com/watch?v=d_m5csmrf7I)
+
+05 - Signature directory
+- [sinature](https://github.com/iampawan/fluttersignatureview)
 
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)

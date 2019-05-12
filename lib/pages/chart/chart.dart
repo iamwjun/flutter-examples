@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart';
-import 'package:myapp/pages/chart/schedule.dart';
-import 'dart:math';
+import 'package:myapp/pages/Chart/schedule.dart';
 import 'package:provider/provider.dart';
 
 class MyChart extends StatelessWidget {
@@ -27,8 +26,6 @@ class MyChart extends StatelessWidget {
   static List<Series<LinearSales, String>> createData(
     double stateMgmtTime,
   ) {
-    final random = new Random();
-
     final data = [      
       LinearSales(
         'UX',

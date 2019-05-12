@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/chart/chart.dart';
-import 'package:myapp/pages/chart/schedule.dart';
-import 'package:myapp/pages/chart/slider.dart';
-import 'package:provider/provider.dart';
+import 'package:myapp/pages/Signature/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,37 +22,7 @@ class MyApp extends StatelessWidget {
           cardColor: Colors.purple,
           buttonColor: Colors.purple,
           buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
-      home: MyHomePage(),
-    );
-  }
-}
-
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      builder: (context) => MySchedule(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Time spent'),
-          leading: Icon(Icons.menu),
-        ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(32),
-                child: MyChart(),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(32),
-              child: MySlider(),
-            )
-          ],
-        ),
-      ),
+      home: SignatureHome(),
     );
   }
 }

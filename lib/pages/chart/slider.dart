@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/chart/schedule.dart';
+import 'package:myapp/pages/Chart/schedule.dart';
 import 'package:provider/provider.dart';
 
 class MySlider extends StatefulWidget {

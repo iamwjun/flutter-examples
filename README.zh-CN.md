@@ -17,7 +17,11 @@
 - [Learning video](https://www.youtube.com/watch?v=DL0Ix1lnC4w)
 
 04 - Chart 目录
-- Pragmatic State Management in Flutter (Google I/O'19) 实例了视频里面看不到的代码
+- Pragmatic State Management in Flutter (Google I/O'19) 补全了视频里面看不到的代码
+- [charts example](https://google.github.io/charts/flutter/gallery.html)
 - [Learning video](https://www.youtube.com/watch?v=d_m5csmrf7I)
+
+05 - Signature directory
+- [sinature](https://github.com/iampawan/fluttersignatureview)
 
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
