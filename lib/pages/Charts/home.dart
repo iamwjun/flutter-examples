@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/Chart/chart.dart';
-import 'package:myapp/pages/Chart/schedule.dart';
-import 'package:myapp/pages/Chart/slider.dart';
+import 'package:myapp/pages/Charts/chart.dart';
+import 'package:myapp/pages/Charts/schedule.dart';
+import 'package:myapp/pages/Charts/slider.dart';
 import 'package:provider/provider.dart';
 
 class PieChart extends StatelessWidget {
