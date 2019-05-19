@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/Signature/home.dart';
-import 'package:myapp/pages/Charts/home.dart';
-import 'package:myapp/pages/Instagram/home.dart';
-import 'package:myapp/pages/AvailableKittens/AvailableKittens.dart';
+// import 'package:myapp/pages/Signature/home.dart';
+// import 'package:myapp/pages/Charts/home.dart';
+// import 'package:myapp/pages/Instagram/home.dart';
+// import 'package:myapp/pages/AvailableKittens/AvailableKittens.dart';
+import './pages/Quiz/landingPage.dart';
+import './pages/Quiz/quizPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,12 +21,12 @@ class MyApp extends StatelessWidget {
       //     primaryTextTheme: TextTheme(
       //         title: TextStyle(color: Colors.black, fontFamily: "Aveny")),
       //     textTheme: TextTheme(title: TextStyle(color: Colors.black))),    
-      theme: ThemeData(
-          primarySwatch: Colors.purple,
-          cardColor: Colors.purple,
-          buttonColor: Colors.purple,
-          buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
-      home: AvailableKittens(),
+      // theme: ThemeData(
+      //     primarySwatch: Colors.purple,
+      //     cardColor: Colors.purple,
+      //     buttonColor: Colors.purple,
+      //     buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
+      home: QuizPage(),
     );
   }
 }
