@@ -24,4 +24,7 @@ Below is a list and links to related documents:
 05 - Signature directory
 - [sinature](https://github.com/iampawan/fluttersignatureview)
 
+06 - Quiz directory
+- [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
+
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)

@@ -9,19 +9,22 @@
 - [simple login](https://github.com/iampawan/FlutterLoginPageBloc)
 - [flutter for web devs](https://flutter.dev/docs/get-started/flutter-for/web-devs)
 
-02 - Inastagram 目录
+02 - Inastagram 目录 模仿Inastagram APP
 - [Inastagram UI](https://github.com/iampawan/Flutter-Instagram-UI-Clone)
 - [image picker](https://pub.dev/packages/image_picker)
 
-03 - AvailableKittens 目录
+03 - AvailableKittens 目录 展示猫的APP
 - [Learning video](https://www.youtube.com/watch?v=DL0Ix1lnC4w)
 
-04 - Chart 目录
+04 - Chart 目录 
 - Pragmatic State Management in Flutter (Google I/O'19) 补全了视频里面看不到的代码
 - [charts example](https://google.github.io/charts/flutter/gallery.html)
 - [Learning video](https://www.youtube.com/watch?v=d_m5csmrf7I)
 
-05 - Signature directory
+05 - Signature 目录 签名APP 
 - [sinature](https://github.com/iampawan/fluttersignatureview)
+
+06 - Quiz 目录 
+- [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
 
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)

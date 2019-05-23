@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// https://www.youtube.com/watch?v=jBBl1tYkUnE
 class LandingPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
