@@ -24,7 +24,7 @@ class QuizPageState extends State<QuizPage> {
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Center(
-                  child: Text("Statement 1: pizz is nice"),
+                  child: Text("statement 1: pizz is nice"),
                 ),
               ),
             ),
