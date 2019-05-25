@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './question.dart';
 import './quiz.dart';
 import './answerButton.dart';
+import './answerText.dart';
 
 class QuizPage extends StatefulWidget {
   @override
@@ -19,15 +20,7 @@ class QuizPageState extends State<QuizPage> {
             AnswerButton(true, () {
               print('you answered true');
             }),
-            Material(
-              color: Colors.white,
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Center(
-                  child: Text("statement 1: pizz is nice"),
-                ),
-              ),
-            ),
+            AnswerText('piza is nice', 1),
             AnswerButton(false, () {
               print('you answered false');
             })
