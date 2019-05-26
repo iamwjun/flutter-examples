@@ -18,14 +18,13 @@ class AnserTextState extends State<AnswerText>
   @override
   void initState() {
     super.initState();
-    _fontSizeAnimationController =
-        AnimationController(duration: Duration(microseconds: 500), vsync: this);
-    _fontSizeAnimation = CurvedAnimation(
-        parent: _fontSizeAnimationController, curve: Curves.linear);
+    _fontSizeAnimationController = AnimationController(duration: Duration(microseconds: 500), vsync: this);
+    _fontSizeAnimation = CurvedAnimation(parent: _fontSizeAnimationController, curve: Curves.bounceInOut);
     _fontSizeAnimation.addListener(() => this.setState(() {}));
     _fontSizeAnimationController.forward();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,

@@ -4,6 +4,7 @@ import './question.dart';
 import './quiz.dart';
 import './answerButton.dart';
 import './answerText.dart';
+import './correctWrongOverlay.dart';
 
 class QuizPage extends StatefulWidget {
   @override
@@ -11,9 +12,18 @@ class QuizPage extends StatefulWidget {
 }
 
 class QuizPageState extends State<QuizPage> {
+
+  Question currentQuestion;
+  Quiz quiz = Quiz([
+    Question("Elon Musk is huma", false),
+    Question("Pizza is healthy", false),
+    Question("Flutter is aweso", true)
+  ]);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.expand,
       children: <Widget>[
         Column(
           children: <Widget>[
@@ -26,6 +36,7 @@ class QuizPageState extends State<QuizPage> {
             })
           ],
         ),
+        CorrectWrongOverLay(true),
       ],
     );
   }
