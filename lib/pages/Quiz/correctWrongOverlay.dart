@@ -5,8 +5,9 @@ import 'package:flutter/rendering.dart';
 class CorrectWrongOverLay extends StatefulWidget {
 
   final bool _isCorrect;
+  final VoidCallback _onTap;
 
-  CorrectWrongOverLay(this._isCorrect);
+  CorrectWrongOverLay(this._isCorrect, this._onTap);
 
   @override
   State<StatefulWidget> createState() => new CorrectWrongOverLayState();
@@ -31,7 +32,7 @@ class CorrectWrongOverLayState extends State<CorrectWrongOverLay> with SingleTic
     return Material(
       color: Colors.black54,
       child: InkWell(
-        onTap: () => print("Ypu tapped the overlay"),
+        onTap: () => widget._onTap(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

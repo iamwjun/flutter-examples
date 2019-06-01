@@ -20,6 +20,27 @@ class QuizPageState extends State<QuizPage> {
     Question("Flutter is aweso", true)
   ]);
 
+  String questionText;
+  int questionNumber;
+  bool isCorrect;
+  bool overLayShouIdBeVisible = false;
+
+  @override
+  void initState(){
+    super.initState();
+    currentQuestion = quiz.nextQuestion;
+    questionText = currentQuestion.question;
+    questionNumber = quiz.questionNumber;
+  }
+
+  void handleAnswer(bool answer){
+    isCorrect = (currentQuestion.answer == answer);
+    quiz.answer(isCorrect);
+    this.setState((){
+      overLayShouIdBeVisible = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,15 +49,25 @@ class QuizPageState extends State<QuizPage> {
         Column(
           children: <Widget>[
             AnswerButton(true, () {
-              print('you answered true');
+              handleAnswer(true);
             }),
-            AnswerText('piza is nice', 1),
+            AnswerText(questionText, questionNumber),
             AnswerButton(false, () {
-              print('you answered false');
+              handleAnswer(false);
             })
           ],
         ),
-        CorrectWrongOverLay(true),
+        overLayShouIdBeVisible == true ? CorrectWrongOverLay(
+          isCorrect,
+          (){
+            currentQuestion = quiz.nextQuestion;
+            this.setState((){
+              overLayShouIdBeVisible = false;
+              questionText = currentQuestion.question;
+              questionNumber = quiz.questionNumber;
+            });
+          }
+        ) : Container(),
       ],
     );
   }
