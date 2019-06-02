@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/Quiz/scorePage.dart';
 // import 'package:myapp/pages/Signature/home.dart';
 // import 'package:myapp/pages/Charts/home.dart';
 // import 'package:myapp/pages/Instagram/home.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       //     cardColor: Colors.purple,
       //     buttonColor: Colors.purple,
       //     buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary)),
-      home: QuizPage(),
+      home: LandingPage(),
     );
   }
 }

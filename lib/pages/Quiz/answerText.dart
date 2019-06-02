@@ -25,6 +25,21 @@ class AnserTextState extends State<AnswerText>
   }
 
   @override
+  void dipose(){
+    _fontSizeAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(AnswerText oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if(oldWidget._question != widget._question){
+      _fontSizeAnimationController.reset();
+      _fontSizeAnimationController.forward();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,

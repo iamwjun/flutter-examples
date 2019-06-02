@@ -25,7 +25,13 @@ class CorrectWrongOverLayState extends State<CorrectWrongOverLay> with SingleTic
     _iconAnimation = CurvedAnimation(parent: _iconAnimationController, curve: Curves.elasticInOut);
     _iconAnimation.addListener(() => this.setState(() {}));
     _iconAnimationController.forward();
-  }  
+  }
+
+  @override
+  void dispose(){
+    _iconAnimationController.dispose();
+    super.dispose();
+  }
   
   @override
   Widget build(BuildContext context) {
