@@ -27,4 +27,6 @@ Below is a list and links to related documents:
 06 - Quiz directory
 - [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
 
+Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
+[A curated list of samples](https://github.com/flutter/samples/blob/master/INDEX.md)

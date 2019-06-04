@@ -27,4 +27,6 @@
 06 - Quiz 目录 
 - [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
 
+flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
+[精选的样本列表](https://github.com/flutter/samples/blob/master/INDEX.md)
