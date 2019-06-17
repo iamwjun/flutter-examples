@@ -95,8 +95,13 @@ class MyApp extends StatelessWidget {
 }
 
 /*
- * 简单的答题APP示例
+ * 炫酷示例
  * next https://github.com/Solido/awesome-flutter
+ */
+
+/*
+ * 基础组件使用
+ * next https://github.com/ibhavikmakwana/FlutterPlayground/tree/master/lib
  */
 
 
