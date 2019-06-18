@@ -30,3 +30,5 @@ Below is a list and links to related documents:
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
 [A curated list of samples](https://github.com/flutter/samples/blob/master/INDEX.md)
+[Plugins for Flutter](https://github.com/flutter/plugins/tree/master/packages)
+[Dart Packages](https://pub.dev/)

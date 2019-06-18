@@ -29,6 +29,7 @@ dependencies:
   image_picker: ^0.6.0+2
   charts_flutter: ^0.6.0
   provider: ^2.0.0+1
+  google_maps_flutter: 
 
 dev_dependencies:
   flutter_test:

@@ -24,11 +24,11 @@ class AnserTextState extends State<AnswerText>
     _fontSizeAnimationController.forward();
   }
 
-  @override
-  void dipose(){
-    _fontSizeAnimationController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dipose(){
+  //   _fontSizeAnimationController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   void didUpdateWidget(AnswerText oldWidget) {

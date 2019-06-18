@@ -30,3 +30,5 @@
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
 [精选的样本列表](https://github.com/flutter/samples/blob/master/INDEX.md)
+[Flutter插件](https://github.com/flutter/plugins/tree/master/packages)
+[Dart Packges](https://pub.dev/)
