@@ -27,6 +27,10 @@
 06 - Quiz 目录 
 - [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
 
+07 - Provider 目录
+- Provider pakages 基本用法
+- [参考链接](https://juejin.im/post/5d00a84fe51d455a2f22023f)
+
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
 [精选的样本列表](https://github.com/flutter/samples/blob/master/INDEX.md)

@@ -102,16 +102,46 @@
 //  * Provider
 //  * next https://juejin.im/post/5d00a84fe51d455a2f22023f
 //  */
-import 'package:example/pages/Quiz/landingPage.dart';
+import 'package:example/pages/Provider/FirstPage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+class CounterModel with ChangeNotifier {
+  int _count = 0;
+  int get value => _count;
+
+  void increment(){
+    _count++;
+    notifyListeners();
+  }
+
+  void decrement(){
+    _count--;
+    notifyListeners();
+  }
+}
+
+void main(){
+  final counter = CounterModel();
+  final textSize = 48;
+
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider.value(value: textSize),
+        ChangeNotifierProvider.value(value: counter)
+      ],
+      child: MyApp(),
+    )
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LandingPage()
+      theme: ThemeData.dark(),
+      home: FirstPage()
     );
   }
 }

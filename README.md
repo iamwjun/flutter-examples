@@ -27,6 +27,11 @@ Below is a list and links to related documents:
 06 - Quiz directory
 - [Learning video](https://www.youtube.com/watch?v=jBBl1tYkUnE)
 
+07 - Provider directory
+- Provider pakages basic usage
+- [Reference link](https://juejin.im/post/5d00a84fe51d455a2f22023f)
+
+
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
 [A curated list of samples](https://github.com/flutter/samples/blob/master/INDEX.md)

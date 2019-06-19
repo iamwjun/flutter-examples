@@ -21,3 +21,7 @@
 ```bash
    flutter channel stable
 ```
+04 - BoxConstraints has both a negative minimum width and a negative minimum height.
+- The double type passed when setting Icon size and Text fontSize needs to take the absolute value.
+- 设置 Icon size和Text fontSize时传入的double类型需要取绝对值
+- example: lib\pages\Quiz\correctWrongOverlay.dart line 52 and line 58
