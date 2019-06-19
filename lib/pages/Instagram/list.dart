@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:myapp/pages/Instagram/stories.dart';
+import 'package:example/pages/Instagram/stories.dart';
 
 class InstagramList extends StatelessWidget {
   InstagramList({Key key, @required this.image}) : super(key: key);

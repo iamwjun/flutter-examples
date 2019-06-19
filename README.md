@@ -32,3 +32,4 @@ Flutter reference and learning resources
 [A curated list of samples](https://github.com/flutter/samples/blob/master/INDEX.md)
 [Plugins for Flutter](https://github.com/flutter/plugins/tree/master/packages)
 [Dart Packages](https://pub.dev/)
+[闲鱼团队技术分享](https://www.yuque.com/xytech/flutter/)

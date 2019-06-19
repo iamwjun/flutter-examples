@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/Instagram/list.dart';
+import 'package:example/pages/Instagram/list.dart';
 
 class InstagramBody extends StatelessWidget {
   InstagramBody({Key key, @required this.image}) : super(key: key);

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/Instagram/body.dart';
+import 'package:example/pages/Instagram/body.dart';
 import 'package:image_picker/image_picker.dart';
 
 class InstagramHome extends StatefulWidget {
@@ -34,7 +34,7 @@ class _InstagramHomeState extends State<InstagramHome> {
         ),
         title: SizedBox(
           height: 35.0,
-          child: Image.asset("assets/images/insta_logo.png"),
+          child: Image.asset('assets/images/insta_logo.png'),
         ),
         actions: <Widget>[
           Padding(
