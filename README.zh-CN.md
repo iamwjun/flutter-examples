@@ -33,3 +33,4 @@ flutter参考及学习资源
 [Flutter插件](https://github.com/flutter/plugins/tree/master/packages)
 [Dart Packges](https://pub.dev/)
 [闲鱼团队技术分享](https://www.yuque.com/xytech/flutter/)
+[动画官方文档](https://flutter.dev/docs/development/ui/animations)

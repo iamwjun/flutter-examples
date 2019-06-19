@@ -84,8 +84,26 @@
 /*
  * 简单的答题APP示例
  */
+// import 'package:flutter/material.dart';
+// import './pages/Quiz/landingPage.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: LandingPage(),
+//     );
+//   }
+// }
+
+// /*
+//  * Provider
+//  * next https://juejin.im/post/5d00a84fe51d455a2f22023f
+//  */
+import 'package:example/pages/Quiz/landingPage.dart';
 import 'package:flutter/material.dart';
-import './pages/Quiz/landingPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -93,7 +111,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LandingPage(),
+      home: LandingPage()
     );
   }
 }
@@ -106,11 +124,6 @@ class MyApp extends StatelessWidget {
 /*
  * Beautiful Material Search App
  * next https://www.youtube.com/watch?v=FPcl1tu0gDs
- */
-
-/*
- * Provider
- * next https://juejin.im/post/5d00a84fe51d455a2f22023f
  */
 
 /*
