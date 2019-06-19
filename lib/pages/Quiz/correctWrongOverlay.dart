@@ -42,20 +42,20 @@ class CorrectWrongOverLayState extends State<CorrectWrongOverLay> with SingleTic
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
+            Container(              
               decoration: BoxDecoration(
                 color: Colors.white,
-                shape: BoxShape.circle,
+                shape: BoxShape.circle,                
               ),
               child: Transform.rotate(
                 angle: _iconAnimation.value * 2 * pi,
-                child: Icon(widget._isCorrect == true ? Icons.done : Icons.clear, size: _iconAnimation.value * 80.0),
+                child: Icon(widget._isCorrect == true ? Icons.done : Icons.clear, size: _iconAnimation.value.abs() * 80.0),
               )
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 20.0),
             ),
-            Text(widget._isCorrect == true ? "Correct!" : "Wrong", style: TextStyle(color: Colors.white, fontSize: 30.0),)
+            Text(widget._isCorrect == true ? "Correct!" : "Wrong", style: TextStyle(color: Colors.white, fontSize: _iconAnimation.value.abs() * 30.0),)
           ],
         ),
       ),

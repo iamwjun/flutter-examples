@@ -1,4 +1,4 @@
-[English](./README.md) | 简体中文
+[English](./README.md) | 简体中文  | [问题及解决方案](./Problems.md)
 ## 开发了很多APP
 
 代码放在lib/pages目录下面.  

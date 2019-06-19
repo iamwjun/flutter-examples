@@ -1,25 +1,28 @@
-import 'package:flutter/material.dart';
-import 'package:example/pages/Instagram/home.dart';
+/*
+ * 模仿Instagram APP示例
+ */
+// import 'package:flutter/material.dart';
+// import 'package:example/pages/Instagram/home.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Instagram',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          primaryColor: Colors.black,
-          primaryIconTheme: IconThemeData(color: Colors.black),
-          primaryTextTheme: TextTheme(
-              title: TextStyle(color: Colors.black, fontFamily: "Aveny")),
-          textTheme: TextTheme(title: TextStyle(color: Colors.black))),
-      home: InstagramHome(),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Instagram',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//           primaryColor: Colors.black,
+//           primaryIconTheme: IconThemeData(color: Colors.black),
+//           primaryTextTheme: TextTheme(
+//               title: TextStyle(color: Colors.black, fontFamily: "Aveny")),
+//           textTheme: TextTheme(title: TextStyle(color: Colors.black))),
+//       home: InstagramHome(),
+//     );
+//   }
+// }
 
 /*
  * AvailableKittens APP示例
@@ -81,19 +84,19 @@ class MyApp extends StatelessWidget {
 /*
  * 简单的答题APP示例
  */
-// import 'package:flutter/material.dart';
-// import './pages/Quiz/landingPage.dart';
+import 'package:flutter/material.dart';
+import './pages/Quiz/landingPage.dart';
 
-// void main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: LandingPage(),
-//     );
-//   }
-// }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: LandingPage(),
+    );
+  }
+}
 
 /*
  * 炫酷示例

@@ -1,4 +1,4 @@
-English | [简体中文](./README.zh-CN.md)
+English | [简体中文](./README.zh-CN.md) | [Q & S](./Problems.md)
 ## Developed a lot of apps
 
 The code is in the lib/pages directory.  
