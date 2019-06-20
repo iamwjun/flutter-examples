@@ -53,7 +53,7 @@
 // class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(  
+//     return MaterialApp(
 //       theme: ThemeData(
 //           primarySwatch: Colors.purple,
 //           cardColor: Colors.purple,
@@ -98,53 +98,53 @@
 //   }
 // }
 
-// /*
-//  * Provider
-//  * next https://juejin.im/post/5d00a84fe51d455a2f22023f
-//  */
-import 'package:example/pages/Provider/FirstPage.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+/*
+ * Provider
+ * next https://juejin.im/post/5d00a84fe51d455a2f22023f
+ */
+// import 'package:example/pages/Provider/FirstPage.dart';
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
 
-class CounterModel with ChangeNotifier {
-  int _count = 0;
-  int get value => _count;
+// class CounterModel with ChangeNotifier {
+//   int _count = 0;
+//   int get value => _count;
 
-  void increment(){
-    _count++;
-    notifyListeners();
-  }
+//   void increment(){
+//     _count++;
+//     notifyListeners();
+//   }
 
-  void decrement(){
-    _count--;
-    notifyListeners();
-  }
-}
+//   void decrement(){
+//     _count--;
+//     notifyListeners();
+//   }
+// }
 
-void main(){
-  final counter = CounterModel();
-  final textSize = 48;
+// void main(){
+//   final counter = CounterModel();
+//   final textSize = 48;
 
-  runApp(
-    MultiProvider(
-      providers: [
-        Provider.value(value: textSize),
-        ChangeNotifierProvider.value(value: counter)
-      ],
-      child: MyApp(),
-    )
-  );
-}
+//   runApp(
+//     MultiProvider(
+//       providers: [
+//         Provider.value(value: textSize),
+//         ChangeNotifierProvider.value(value: counter)
+//       ],
+//       child: MyApp(),
+//     )
+//   );
+// }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      home: FirstPage()
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData.dark(),
+//       home: FirstPage()
+//     );
+//   }
+// }
 
 /*
  * 炫酷示例
@@ -161,8 +161,72 @@ class MyApp extends StatelessWidget {
  * next https://github.com/ibhavikmakwana/FlutterPlayground
  */
 
+import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
 
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
+  final String title;
 
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            AnimatedSwitcher(
+              duration: Duration(milliseconds: 500),
+              transitionBuilder: (Widget child, Animation<double> animation) =>
+                  ScaleTransition(child: child, scale: animation),
+              child: Text(
+                '$_counter',
+                key: ValueKey<int>(_counter),
+                style: Theme.of(context).textTheme.display1,
+              ),
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
