@@ -160,9 +160,8 @@
  * 基础组件使用
  * next https://github.com/ibhavikmakwana/FlutterPlayground
  */
-
 import 'package:flutter/material.dart';
-import 'base/AnimatedSwitcher.dart';
+import 'package:example/base/imports.dart';
 
 void main() => runApp(MyApp());
 
@@ -170,13 +169,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AnimatedSwitcher',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'AnimatedSwitcher'),
+      theme: ThemeData.dark(),
+      home: Navigation(),
+      initialRoute: '/',
+      routes: {
+        '/NavigationDrawer': (context) => NavigationDrawerDemo(title: 'NavigationDrawer',),
+        '/AnimatedSwitcher': (context) => AnimatedSwitcherDemo(title: 'AnimatedSwitcher'),
+      },
     );
   }
 }
-
-
