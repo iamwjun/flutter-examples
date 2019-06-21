@@ -161,7 +161,7 @@
  * next https://github.com/ibhavikmakwana/FlutterPlayground
  */
 import 'package:flutter/material.dart';
-import 'package:example/base/imports.dart';
+import 'package:example/base/routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -170,12 +170,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: Navigation(),
       initialRoute: '/',
-      routes: {
-        '/NavigationDrawer': (context) => NavigationDrawerDemo(title: 'NavigationDrawer',),
-        '/AnimatedSwitcher': (context) => AnimatedSwitcherDemo(title: 'AnimatedSwitcher'),
-      },
+      routes: routes(),
     );
   }
 }

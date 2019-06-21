@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:example/base/routes.dart';
 
 class Navigation extends StatelessWidget {
   final List<String> entries = <String>['NavigationDrawer', 'AnimatedSwitcher', 'C'];
@@ -12,7 +13,7 @@ class Navigation extends StatelessWidget {
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(8.0),
-        itemCount: entries.length,
+        itemCount: routelist.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
@@ -27,7 +28,7 @@ class Navigation extends StatelessWidget {
                 )
               ),
               child: InkWell(
-                onTap: () => Navigator.pushNamed(context, '/${entries[index]}'),
+                onTap: () => Navigator.pushNamed(context, routelist[index].navigation),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +38,7 @@ class Navigation extends StatelessWidget {
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
                         child: Text(
-                          entries[index],
+                          routelist[index].title,
                           softWrap: true,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
