@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:example/base/routes.dart';
 
 class Navigation extends StatelessWidget {
-  final List<String> entries = <String>['NavigationDrawer', 'AnimatedSwitcher', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +55,13 @@ class Navigation extends StatelessWidget {
           );
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
+          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet), title: Text('钱包')),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('设置'))
+        ],
       ),
     );
   }
