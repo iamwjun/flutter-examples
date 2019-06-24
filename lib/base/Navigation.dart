@@ -56,13 +56,6 @@ class Navigation extends StatelessWidget {
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
-          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet), title: Text('钱包')),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('设置'))
-        ],
-      ),
     );
   }
 }

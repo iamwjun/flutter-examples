@@ -27,7 +27,9 @@ class _ProgressButtonState extends State<ProgressButton>
 
   @override
   dispose() {
-    _controller.dispose();
+    if (_controller != null) {
+      _controller.dispose();      
+    }
     super.dispose();
   }
 
@@ -39,15 +41,17 @@ class _ProgressButtonState extends State<ProgressButton>
         ),
         body: Center(
           child: PhysicalModel(
-            color: Colors.blue,
+            color: Colors.lightGreen,
             borderRadius: BorderRadius.circular(25.0),
+            shadowColor: Colors.lightGreenAccent,
             child: Container(
               key: _globalKey,
               height: 48.0,
               width: _width,
-              child: MaterialButton(
+              child: RaisedButton(
                 padding: EdgeInsets.all(0.0),
                 child: buildButtonChild(),
+                shape: StadiumBorder(),
                 onPressed: () {},
                 onHighlightChanged: (isPressed) {
                   setState(() {
@@ -94,7 +98,7 @@ class _ProgressButtonState extends State<ProgressButton>
   Widget buildButtonChild() {
     if (_state == 0) {
       return Text(
-        'Login',
+        'Click me',
         style: TextStyle(color: Colors.white, fontSize: 16.0),
       );
     } else if (_state == 1) {
