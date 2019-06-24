@@ -31,6 +31,10 @@ Below is a list and links to related documents:
 - Provider pakages basic usage
 - [Reference link](https://juejin.im/post/5d00a84fe51d455a2f22023f)
 
+08 - base directory
+- Basic component example
+- [Reference link](https://api.flutter.dev/flutter/material/material-library.html)
+- [Reference link](https://github.com/ibhavikmakwana/FlutterPlayground)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
