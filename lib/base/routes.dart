@@ -15,6 +15,7 @@ List<RouteItem> routelist = [
   RouteItem('/BottomNavigation', '底部导航'),
   RouteItem('/TabBar', 'Tab Bar'),
   RouteItem('/TabbedAppBar', 'Tabbed AppBar'),
+  RouteItem('/AnimatedSize', 'AnimatedSize'),
 ];
 
 Map<String, WidgetBuilder> routes() {
@@ -26,5 +27,6 @@ Map<String, WidgetBuilder> routes() {
     '/BottomNavigation': (context) => BottomNavigationBarDemo(title: '底部导航'),
     '/TabBar': (context) => TabBarDemo(title: 'Tab bar'),
     '/TabbedAppBar': (context) => TabbedAppBar(title: 'Tabbed AppBar'),
+    '/AnimatedSize': (context) => AnimatedSizeDemo(title: 'AnimatedSize'),
   };
 }
