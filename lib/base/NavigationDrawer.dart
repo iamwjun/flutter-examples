@@ -23,8 +23,9 @@ class _NavigateionDrawerState extends State<NavigationDrawerDemo> {
             DrawerHeader(
               child: Column(
                 children: <Widget>[
-                  FlutterLogo(
-                    size: 48.0,
+                  SizedBox(
+                    height: 40.0,
+                    child: Image.asset('assets/images/insta_logo.png'),
                   ),
                   Text(
                     "抽屉式导航栏",
@@ -48,33 +49,38 @@ class _NavigateionDrawerState extends State<NavigationDrawerDemo> {
             ListTile(
               leading: Icon(Icons.photo_camera),
               title: Text('导入', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: Icon(Icons.photo),
               title: Text('相册', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: Icon(Icons.slideshow),
               title: Text('幻灯片', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: Icon(Icons.build),
               title: Text('工具', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
             Divider(),
             ListTile(
+              leading: Icon(Icons.home),
+              title: Text('首页', style: TextStyle(fontSize: 16.0)),
+              onTap: () => Navigator.pushNamed(context, '/'),
+            ),
+            ListTile(
               leading: Icon(Icons.share),
               title: Text('分享', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: Icon(Icons.send),
               title: Text('发送', style: TextStyle(fontSize: 16.0)),
-              onTap: () => Navigator.pushNamed(context, '/'),
+              onTap: () => Navigator.pop(context),
             ),
           ],
         ),

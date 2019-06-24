@@ -22,7 +22,10 @@ class _ProgressButtonState extends State<ProgressButton>
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    print(_controller);
+    if(_controller != null){
+      _controller.dispose();
+    }    
   }
 
   @override
@@ -34,12 +37,12 @@ class _ProgressButtonState extends State<ProgressButton>
       body: Center(
         child: PhysicalModel(
           elevation: 8.0,
-          borderRadius: BorderRadius.circular(25.0),
-          color: Colors.lightGreen,
-          shadowColor: Colors.lightGreen,
+          borderRadius: new BorderRadius.circular(25.0),
+          color: Colors.lightBlue,
+          shadowColor: Colors.lightBlue,
           child: Container(
             key: _globalKey,
-            color: Colors.lightGreen,
+            color: Colors.lightBlue,
             height: 48.0,
             width: _width,
             child: RaisedButton(
@@ -53,7 +56,7 @@ class _ProgressButtonState extends State<ProgressButton>
                 });
               },
               elevation: 4.0,
-              color: Colors.lightGreen,
+              color: Colors.lightBlue,
             ),
           ),
         ),
