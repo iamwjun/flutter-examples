@@ -32,9 +32,9 @@ class _BottomNavigationBartDemoState extends State<BottomNavigationBarDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('底部导航'),
+        title: Text(widget.title),
       ),
-      body: Center(child: Text('底部导航')),
+      body: Center(child: Text(widget.title)),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),

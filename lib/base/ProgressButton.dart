@@ -37,7 +37,7 @@ class _ProgressButtonState extends State<ProgressButton>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('进度按钮'),
+          title: Text(widget.title),
         ),
         body: Center(
           child: PhysicalModel(

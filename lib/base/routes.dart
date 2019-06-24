@@ -13,6 +13,7 @@ List<RouteItem> routelist = [
   RouteItem('/AnimatedSwitcher', '动画切换器'),
   RouteItem('/ProgressButton', '进度按钮'),
   RouteItem('/BottomNavigation', '底部导航'),
+  RouteItem('/TabBar', 'TabBar'),
 ];
 
 Map<String, WidgetBuilder> routes() {
@@ -22,5 +23,6 @@ Map<String, WidgetBuilder> routes() {
     '/AnimatedSwitcher': (context) => AnimatedSwitcherDemo(title: '动画切换器'),
     '/ProgressButton': (context) => ProgressButton(title: '进度按钮'),
     '/BottomNavigation': (context) => BottomNavigationBarDemo(title: '底部导航'),
+    '/TabBar': (context) => TabBarDemo(title: 'Tab bar'),
   };
 }
