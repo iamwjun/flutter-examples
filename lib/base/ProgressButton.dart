@@ -1,6 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class ProgressButton extends StatefulWidget {
   ProgressButton({Key key, this.title}) : super(key: key);
@@ -8,79 +7,60 @@ class ProgressButton extends StatefulWidget {
   final String title;
 
   @override
-  State<StatefulWidget> createState() => new _ProgressButtonState();
+  State<StatefulWidget> createState() => _ProgressButtonState();
 }
 
 class _ProgressButtonState extends State<ProgressButton>
     with TickerProviderStateMixin {
+  bool _isPressed = false, _animatingReveal = false;
   int _state = 0;
-  Animation _animation;
-  AnimationController _controller;
-  GlobalKey _globalKey = GlobalKey();
   double _width = double.infinity;
+  Animation _animation;
+  GlobalKey _globalKey = GlobalKey();
+  AnimationController _controller;
 
   @override
-  void dispose() {
+  void deactivate() {
+    reset();
+    super.deactivate();
+  }
+
+  @override
+  dispose() {
+    _controller.dispose();
     super.dispose();
-    print(_controller);
-    if(_controller != null){
-      _controller.dispose();
-    }    
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: PhysicalModel(
-          elevation: 8.0,
-          borderRadius: new BorderRadius.circular(25.0),
-          color: Colors.lightBlue,
-          shadowColor: Colors.lightBlue,
-          child: Container(
-            key: _globalKey,
-            color: Colors.lightBlue,
-            height: 48.0,
-            width: _width,
-            child: RaisedButton(
-              padding: EdgeInsets.all(0.0),
-              child: setUpButtonChild(),
-              onPressed: () {
-                setState(() {
-                  if (_state == 0) {
-                    animateButton();
-                  }
-                });
-              },
-              elevation: 4.0,
-              color: Colors.lightBlue,
+        appBar: AppBar(
+          title: Text('进度按钮'),
+        ),
+        body: Center(
+          child: PhysicalModel(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(25.0),
+            child: Container(
+              key: _globalKey,
+              height: 48.0,
+              width: _width,
+              child: MaterialButton(
+                padding: EdgeInsets.all(0.0),
+                child: buildButtonChild(),
+                onPressed: () {},
+                onHighlightChanged: (isPressed) {
+                  setState(() {
+                    _isPressed = isPressed;
+                    if (_state == 0) {
+                      animateButton();
+                    }
+                  });
+                },
+              ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  setUpButtonChild() {
-    if (_state == 0) {
-      return new Text(
-        "Click Here",
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
-        ),
-      );
-    } else if (_state == 1) {
-      return CircularProgressIndicator(
-        value: null,
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-      );
-    } else {
-      return Icon(Icons.check, color: Colors.white);
-    }
+        ));
   }
 
   void animateButton() {
@@ -105,5 +85,43 @@ class _ProgressButtonState extends State<ProgressButton>
         _state = 2;
       });
     });
+
+    Timer(Duration(milliseconds: 3600), () {
+      _animatingReveal = true;
+    });
+  }
+
+  Widget buildButtonChild() {
+    if (_state == 0) {
+      return Text(
+        'Login',
+        style: TextStyle(color: Colors.white, fontSize: 16.0),
+      );
+    } else if (_state == 1) {
+      return SizedBox(
+        height: 36.0,
+        width: 36.0,
+        child: CircularProgressIndicator(
+          value: null,
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        ),
+      );
+    } else {
+      return Icon(Icons.check, color: Colors.white);
+    }
+  }
+
+  double calculateElevation() {
+    if (_animatingReveal) {
+      return 0.0;
+    } else {
+      return _isPressed ? 6.0 : 4.0;
+    }
+  }
+
+  void reset() {
+    _width = 300;
+    _animatingReveal = false;
+    _state = 0;
   }
 }
