@@ -18,6 +18,7 @@ class _NavigateionDrawerState extends State<NavigationDrawerDemo> {
       ),
       drawer: Drawer(
         child: ListView(
+          reverse: true,
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
@@ -86,7 +87,7 @@ class _NavigateionDrawerState extends State<NavigationDrawerDemo> {
         ),
       ),
       body: Center(
-        child: Text('NavigationDrawer'),
+        child: Text('navigation drawer'),
       ),
     );
   }
