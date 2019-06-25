@@ -29,18 +29,19 @@ Below is a list and links to related documents:
 
 07 - Provider directory
 - Provider pakages basic usage
-- [Reference link](https://juejin.im/post/5d00a84fe51d455a2f22023f)
+- [Reference](https://juejin.im/post/5d00a84fe51d455a2f22023f)
 
 08 - base directory
 - Basic component example
-- [Reference link](https://api.flutter.dev/flutter/material/material-library.html)
-- [Reference link](https://github.com/ibhavikmakwana/FlutterPlayground)
+- [Reference](https://api.flutter.dev/flutter/material/material-library.html)
+- [Reference](https://github.com/ibhavikmakwana/FlutterPlayground)
 
 09 - base directory Alipay.dart
 - how use alipay SDK
-- [Reference link](https://docs.open.alipay.com/204/105051)
-- [Reference link](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
-- [Reference link](https://github.com/flutter/flutter/issues/16259)
+- [Reference](https://docs.open.alipay.com/204/105051)
+- [Reference](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
+- [Reference](https://github.com/flutter/flutter/issues/16259)
+- [Reference](https://flutter.dev/docs/development/platform-integration/platform-channels)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
