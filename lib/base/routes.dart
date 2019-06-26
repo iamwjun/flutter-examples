@@ -16,6 +16,7 @@ List<RouteItem> routelist = [
   RouteItem('/TabBar', 'Tab Bar'),
   RouteItem('/TabbedAppBar', 'Tabbed AppBar'),
   RouteItem('/AnimatedSize', 'AnimatedSize'),
+  RouteItem('/BatteryLevel', '电池电量'),
 ];
 
 Map<String, WidgetBuilder> routes() {
@@ -28,5 +29,6 @@ Map<String, WidgetBuilder> routes() {
     '/TabBar': (context) => TabBarDemo(title: 'Tab bar'),
     '/TabbedAppBar': (context) => TabbedAppBar(title: 'Tabbed AppBar'),
     '/AnimatedSize': (context) => AnimatedSizeDemo(title: 'AnimatedSize'),
+    '/BatteryLevel': (context) => BatteryLevel(title: '电池电量'),
   };
 }

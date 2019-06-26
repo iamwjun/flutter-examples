@@ -7,3 +7,4 @@ export 'package:example/base/BottomNavigation.dart';
 export 'package:example/base/TabBar.dart';
 export 'package:example/base/TabbedAppBar.dart';
 export 'package:example/base/AnimatedSize.dart';
+export 'package:example/base/Batterylevel.dart';

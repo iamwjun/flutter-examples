@@ -36,12 +36,15 @@ Below is a list and links to related documents:
 - [Reference](https://api.flutter.dev/flutter/material/material-library.html)
 - [Reference](https://github.com/ibhavikmakwana/FlutterPlayground)
 
-09 - base directory Alipay.dart
+09 - base directory Batterylevel.dart
+- get batterylevel with MethodChnnel
+- [Reference](https://flutter.dev/docs/development/platform-integration/platform-channels)
+
+10 - base directory Alipay.dart
 - how use alipay SDK
 - [Reference](https://docs.open.alipay.com/204/105051)
 - [Reference](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [Reference](https://github.com/flutter/flutter/issues/16259)
-- [Reference](https://flutter.dev/docs/development/platform-integration/platform-channels)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)

@@ -36,12 +36,15 @@
 - [参考](https://api.flutter.dev/flutter/material/material-library.html)
 - [参考](https://github.com/ibhavikmakwana/FlutterPlayground)
 
-09 - base directory Alipay.dart
-- 如何使用alipya SDK
+09 - base directory Batterylevel.dart
+- 通过MethodChnnel获取电量
+- [参考](https://flutter.dev/docs/development/platform-integration/platform-channels)
+
+10 - base directory Alipay.dart
+- how use alipay SDK
 - [参考](https://docs.open.alipay.com/204/105051)
 - [参考](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [参考](https://github.com/flutter/flutter/issues/16259)
-- [参考](https://flutter.dev/docs/development/platform-integration/platform-channels)
 
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
