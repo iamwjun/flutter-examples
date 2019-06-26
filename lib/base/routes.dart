@@ -18,6 +18,7 @@ List<RouteItem> routelist = [
   RouteItem('/AnimatedSize', 'AnimatedSize'),
   RouteItem('/BatteryLevel', '电池电量'),
   RouteItem('/GoogleMaps', 'Google地图'),
+  RouteItem('/Alipay', '支付宝支付'),
 ];
 
 Map<String, WidgetBuilder> routes() {
@@ -32,5 +33,6 @@ Map<String, WidgetBuilder> routes() {
     '/AnimatedSize': (context) => AnimatedSizeDemo(title: 'AnimatedSize'),
     '/BatteryLevel': (context) => BatteryLevel(title: '电池电量'),
     '/GoogleMaps': (context) => GoogleMaps(title: 'Google地图'),
+    '/Alipay': (context) => AlipayDemo(title: '支付宝APP SDK示例'),
   };
 }

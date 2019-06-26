@@ -42,6 +42,7 @@
 
 10 - base directory Alipay.dart
 - how use alipay SDK
+- [参考](https://docs.open.alipay.com/204/105296/)
 - [参考](https://docs.open.alipay.com/204/105051)
 - [参考](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [参考](https://github.com/flutter/flutter/issues/16259)

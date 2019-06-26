@@ -42,6 +42,7 @@ Below is a list and links to related documents:
 
 10 - base directory Alipay.dart
 - how use alipay SDK
+- [Reference](https://docs.open.alipay.com/204/105296/)
 - [Reference](https://docs.open.alipay.com/204/105051)
 - [Reference](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [Reference](https://github.com/flutter/flutter/issues/16259)

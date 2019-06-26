@@ -1,2 +1,0 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('alipaySdk-15.6.4-20190611174359-noUtdid.aar'))
