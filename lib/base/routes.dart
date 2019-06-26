@@ -17,6 +17,7 @@ List<RouteItem> routelist = [
   RouteItem('/TabbedAppBar', 'Tabbed AppBar'),
   RouteItem('/AnimatedSize', 'AnimatedSize'),
   RouteItem('/BatteryLevel', '电池电量'),
+  RouteItem('/GoogleMaps', 'Google地图'),
 ];
 
 Map<String, WidgetBuilder> routes() {
@@ -30,5 +31,6 @@ Map<String, WidgetBuilder> routes() {
     '/TabbedAppBar': (context) => TabbedAppBar(title: 'Tabbed AppBar'),
     '/AnimatedSize': (context) => AnimatedSizeDemo(title: 'AnimatedSize'),
     '/BatteryLevel': (context) => BatteryLevel(title: '电池电量'),
+    '/GoogleMaps': (context) => GoogleMaps(title: 'Google地图'),
   };
 }
