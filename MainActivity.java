@@ -34,9 +34,6 @@ public class MainActivity extends FlutterActivity {
           } else {
             result.error("UNAVAILABLE", "Battery level not available.", null);
           }
-        } else if (call.method.equals("sendPaymentParameters")) {
-          String payInfo = "接收参数成功";
-          result.success(payInfo);
         } else {
           result.notImplemented();
         }
