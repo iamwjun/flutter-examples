@@ -46,6 +46,7 @@
 - [参考](https://docs.open.alipay.com/204/105051)
 - [参考](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [参考](https://github.com/flutter/flutter/issues/16259)
+- [导入aar](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)

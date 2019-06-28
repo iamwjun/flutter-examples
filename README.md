@@ -46,6 +46,7 @@ Below is a list and links to related documents:
 - [Reference](https://docs.open.alipay.com/204/105051)
 - [Reference](https://flutter.dev/docs/development/packages-and-plugins/developing-packages)
 - [Reference](https://github.com/flutter/flutter/issues/16259)
+- [Reference](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)

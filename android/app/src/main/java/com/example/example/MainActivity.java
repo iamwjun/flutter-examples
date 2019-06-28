@@ -16,8 +16,6 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import com.alipay.sdk.app.PayTask;
 
-import java.util.Map;
-
 public class MainActivity extends FlutterActivity {
   private static final String CHANNEL = "examples.flutter.dev/battery";
 
@@ -62,8 +60,8 @@ public class MainActivity extends FlutterActivity {
     return batteryLevel;
   }
 
-  public void payV2(){
-    PayTask alipay = new PayTask();
-    Map<String, String> result = alipay.payV2(orderInfo, true);
-  }
+  // public void payV2(){
+  //   PayTask alipay = new PayTask();
+  //   Map<String, String> result = alipay.payV2(orderInfo, true);
+  // }
 }
