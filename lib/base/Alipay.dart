@@ -32,19 +32,28 @@ class _AlipayDemoState extends State<AlipayDemo> {
 
   void _initiatedPayment() async {
     final Post result = await _payment();
-    final String payInfo = await _sendPaymentParameters(result.content);
-    print(payInfo);
+    if(result.code ==  200){
+      final String payInfo = await _sendPaymentParameters(result.content);
+      print(payInfo);
+    }
   }
 
   Future<Post> _payment() async {
-    final response = await http.get("http://192.168.98.20:8080/alipay");
-    return Post.fromJson(json.decode(response.body));
+    final client = new http.Client();
+    try{
+      final response = await client.get("http://192.168.98.20:8080/alipay").timeout(const Duration(seconds: 5));
+      return Post.fromJson(json.decode(response.body));
+    } on PlatformException catch (e){
+      return  Post(code: int.parse(e.code), message: e.message, content: e.toString());
+    } on TimeoutException catch (e){
+      return Post(code: 408, message: e.message, content: e.toString());
+    }
   }
 
   Future<String> _sendPaymentParameters(payInfo) async {
     String result;
     try {
-      result = await platform.invokeMethod("sendPaymentParameters", payInfo);
+      result = await platform.invokeMethod("sendPaymentParameters", <String, dynamic>{ "payInfo": payInfo });
     } on PlatformException catch (e) {
       result = e.details;
     }

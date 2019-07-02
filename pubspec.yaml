@@ -26,7 +26,6 @@ dependencies:
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^8.4.0
   rxdart: ^0.22.0
-  image_picker: ^0.6.0+9
   charts_flutter: ^0.6.0
   provider: ^3.0.0+1
   google_maps: ^3.4.0
