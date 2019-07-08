@@ -32,28 +32,66 @@ class _AlipayDemoState extends State<AlipayDemo> {
 
   void _initiatedPayment() async {
     final Post result = await _payment();
-    if(result.code ==  200){
+    if (result.code == 200) {
       final String payInfo = await _sendPaymentParameters(result.content);
       print(payInfo);
+    }else{
+      _neverSatisfied(result.content);
     }
+  }
+
+  Future<void> _neverSatisfied(String content) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('支付失败'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('错误信息:'),
+                Text(content),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('确认'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<Post> _payment() async {
     final client = new http.Client();
-    try{
-      final response = await client.get("http://192.168.98.20:8080/alipay").timeout(const Duration(seconds: 5));
-      return Post.fromJson(json.decode(response.body));
-    } on PlatformException catch (e){
-      return  Post(code: int.parse(e.code), message: e.message, content: e.toString());
-    } on TimeoutException catch (e){
-      return Post(code: 408, message: e.message, content: e.toString());
+    Post result;
+    try {
+      final response = await client
+          .get("http://192.168.98.20:8080/alipay")
+          .timeout(const Duration(seconds: 5));
+      result = Post.fromJson(json.decode(response.body));
+    } on PlatformException catch (e) {
+      result = Post(
+          code: int.parse(e.code), message: e.message, content: e.toString());
+    } on TimeoutException catch (e) {
+      result = Post(code: 408, message: e.message, content: e.toString());
+    } on FormatException catch (e) {
+      result = Post(code: 405, message: e.message, content: e.toString());
     }
+    return result;
   }
 
   Future<String> _sendPaymentParameters(payInfo) async {
     String result;
     try {
-      result = await platform.invokeMethod("sendPaymentParameters", <String, dynamic>{ "payInfo": payInfo });
+      result = await platform.invokeMethod(
+          "sendPaymentParameters", <String, dynamic>{"payInfo": payInfo});
     } on PlatformException catch (e) {
       result = e.details;
     }
