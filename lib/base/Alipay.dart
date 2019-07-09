@@ -35,18 +35,18 @@ class _AlipayDemoState extends State<AlipayDemo> {
     if (result.code == 200) {
       final String payInfo = await _sendPaymentParameters(result.content);
       print(payInfo);
-    }else{
-      _neverSatisfied(result.content);
+    } else {
+      _neverSatisfied(result.message);
     }
   }
 
   Future<void> _neverSatisfied(String content) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // user must tap button!
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('支付失败'),
+          title: Text('发起支付失败'),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
@@ -77,8 +77,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
           .timeout(const Duration(seconds: 5));
       result = Post.fromJson(json.decode(response.body));
     } on PlatformException catch (e) {
-      result = Post(
-          code: int.parse(e.code), message: e.message, content: e.toString());
+      result = Post(code: int.parse(e.code), message: e.message, content: e.toString());
     } on TimeoutException catch (e) {
       result = Post(code: 408, message: e.message, content: e.toString());
     } on FormatException catch (e) {

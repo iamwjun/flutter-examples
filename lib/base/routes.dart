@@ -19,6 +19,8 @@ List<RouteItem> routelist = [
   RouteItem('/BatteryLevel', '电池电量'),
   RouteItem('/GoogleMaps', 'Google地图'),
   RouteItem('/Alipay', '支付宝支付'),
+  RouteItem('/NestedScrollView', 'NestedScrollView'),
+  RouteItem('/RenderSliverHelpers', 'RenderSliverHelpers'),
 ];
 
 Map<String, WidgetBuilder> routes() {
