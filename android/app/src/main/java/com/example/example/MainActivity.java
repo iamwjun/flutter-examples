@@ -39,8 +39,8 @@ public class MainActivity extends FlutterActivity {
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
-    public void handleMessage(Message msg, final MethodChannel.Result result) {
-      System.out.println(msg.obj.toString());
+    public void handleMessage(Message msg, final Result result) {
+      System.out.println("here");
       result.success("支付成功");
     };
   };
@@ -67,13 +67,13 @@ public class MainActivity extends FlutterActivity {
             break;
           case "alipay":
             final String payInfo = call.argument("payInfo");
-            payV2(payInfo);
+            payV2(payInfo, result);
             break;
           case "wxpay":
             result.success("微信支付暂不支持");
             break;
           case "test":
-            multiThreadedTest();
+            multiThreadedTest(result);
             break;
           default:
             result.notImplemented();
@@ -136,20 +136,31 @@ public class MainActivity extends FlutterActivity {
     }
   }
 
-  public void payV2(String orderInfo) {
+  public void payV2(String orderInfo, final Result callback) {
+//    PayTask alipay = new PayTask(MainActivity.this);
+//    Map<String, String> result = alipay.payV2(orderInfo, true);
+//    Log.i("msp", result.toString());
+//    System.out.println("success");
+//
+//    Message msg = new Message();
+//    msg.what = SDK_PAY_FLAG;
+//    msg.obj = result;
+//    callback.success(msg.obj.toString());
+
     final Runnable payRunnable = new Runnable() {
       @Override
       public void run() {
         PayTask alipay = new PayTask(MainActivity.this);
-        Map<String, String> result2 = alipay.payV2(orderInfo, true);
-        Log.i("msp", result2.toString());
+        Map<String, String> result = alipay.payV2(orderInfo, true);
+        Log.i("msp", result.toString());
         System.out.println("success");
 
-        Message msg = new Message();
-        msg.what = SDK_PAY_FLAG;
-        msg.obj = result2;
-//        result1.success(result);
-        mHandler.handleMessage(msg);
+        callback.success(result.toString());
+
+//        Message msg = new Message();
+//        msg.what = SDK_PAY_FLAG;
+//        msg.obj = result;
+//        mHandler.handleMessage(msg);
       }
     };
 
@@ -158,22 +169,18 @@ public class MainActivity extends FlutterActivity {
     payThread.start();
   }
 
-  public void multiThreadedTest() {
-    final Runnable payRunnable = new Runnable() {
-      @Override
-      public void run() {
+  public void multiThreadedTest(final Result callback) {
+
 
         Message msg = new Message();
         msg.what = SDK_PAY_FLAG;
         msg.obj = "测试多线程";
-//        result1.success(result);
-        mHandler.handleMessage(msg);
-      }
-    };
+        callback.success("回调成功");
 
-    //必须异步调用
-    Thread payThread = new Thread(payRunnable);
-    payThread.start();
+    // Message msg = new Message();
+    // msg.what = SDK_PAY_FLAG;
+    // msg.obj = "测试多线程";
+    // return msg.obj.toString();
   }
 
   /*

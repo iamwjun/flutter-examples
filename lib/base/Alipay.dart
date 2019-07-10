@@ -37,7 +37,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
   Future<void> _test() async {
     print("测试开始");
     try{
-      await platform.invokeMethod("test");
+      final String result = await platform.invokeMethod("test");
+      print(result);
     } on PlatformException catch (e) {
       _neverSatisfied(e.message);
     }
@@ -52,9 +53,9 @@ class _AlipayDemoState extends State<AlipayDemo> {
     final Post result = await _payment();
     try {
       if (result.code == 200) {
-        print(result.content);
+        print("发起支付");
         final String payInfo = await _sendPaymentParameters(result.content);
-//        print(payInfo);
+        print("返回结果${payInfo}");
       } else {
         _neverSatisfied(result.message);
       }
@@ -112,8 +113,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
   Future<String> _sendPaymentParameters(payInfo) async {
     String result;
     try {
-      result = await platform.invokeMethod(
-          "alipay", <String, dynamic>{"payInfo": payInfo});
+      result = await platform.invokeMethod("alipay", <String, dynamic>{"payInfo": payInfo});
     } on PlatformException catch (e) {
       result = e.details;
     }
