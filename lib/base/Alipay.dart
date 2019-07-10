@@ -5,6 +5,10 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/*
+ * 沙箱支付宝帐号 srbcdp6003@sandbox.com
+ */
+
 class Post {
   final int code;
   final String message;
@@ -30,13 +34,32 @@ class AlipayDemo extends StatefulWidget {
 class _AlipayDemoState extends State<AlipayDemo> {
   static const platform = const MethodChannel('examples.flutter.dev/battery');
 
-  void _initiatedPayment() async {
+  Future<void> _test() async {
+    print("测试开始");
+    try{
+      await platform.invokeMethod("test");
+    } on PlatformException catch (e) {
+      _neverSatisfied(e.message);
+    }
+  }
+
+  Future<void> _wxPay() async {
+    final String message = await platform.invokeMethod("wxpay");
+    _neverSatisfied(message);
+  }
+
+  Future<void> _initiatedPayment() async {
     final Post result = await _payment();
-    if (result.code == 200) {
-      final String payInfo = await _sendPaymentParameters(result.content);
-      print(payInfo);
-    } else {
-      _neverSatisfied(result.message);
+    try {
+      if (result.code == 200) {
+        print(result.content);
+        final String payInfo = await _sendPaymentParameters(result.content);
+//        print(payInfo);
+      } else {
+        _neverSatisfied(result.message);
+      }
+    } on PlatformException catch (e) {
+      _neverSatisfied(e.message);
     }
   }
 
@@ -90,7 +113,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
     String result;
     try {
       result = await platform.invokeMethod(
-          "sendPaymentParameters", <String, dynamic>{"payInfo": payInfo});
+          "alipay", <String, dynamic>{"payInfo": payInfo});
     } on PlatformException catch (e) {
       result = e.details;
     }
@@ -109,8 +132,18 @@ class _AlipayDemoState extends State<AlipayDemo> {
           children: <Widget>[
             RaisedButton(
               padding: EdgeInsets.only(left: 60.0, right: 60.0),
-              child: Text('立即支付'),
+              child: Text('支付宝支付'),
               onPressed: _initiatedPayment,
+            ),
+            RaisedButton(
+              padding: EdgeInsets.only(left: 60.0, right: 60.0),
+              child: Text('微 信 支 付'),
+              onPressed: _wxPay,
+            ),
+            RaisedButton(
+              padding: EdgeInsets.only(left: 60.0, right: 60.0),
+              child: Text('测试多线程'),
+              onPressed: _test,
             )
           ],
         ),
