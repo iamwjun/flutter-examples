@@ -55,7 +55,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
       if (result.code == 200) {
         print("发起支付");
         final String payInfo = await _sendPaymentParameters(result.content);
-        print("返回结果${payInfo}");
+        print("返回结果$payInfo");
       } else {
         _neverSatisfied(result.message);
       }
