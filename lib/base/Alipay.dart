@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
         final String payInfo = await _sendPaymentParameters(result.content);
         print("返回结果$payInfo");
       } else {
-        _neverSatisfied(result.message);
+        _neverSatisfied("错误编码: ${result.code}, 错误信息: ${result.message}");
       }
     } on PlatformException catch (e) {
       _neverSatisfied(e.message);
@@ -106,6 +107,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
       result = Post(code: 408, message: e.message, content: e.toString());
     } on FormatException catch (e) {
       result = Post(code: 405, message: e.message, content: e.toString());
+    } on SocketException catch (e) {
+      result = Post(code: 407, message: e.message, content: e.toString());
     }
     return result;
   }
