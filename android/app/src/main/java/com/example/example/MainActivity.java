@@ -1,37 +1,41 @@
 package com.example.example;
 
+import java.util.Map;
+
+import com.alipay.sdk.app.EnvUtils;
+import com.alipay.sdk.app.PayTask;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.os.Handler;
-import android.os.Message;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.BatteryManager;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.Manifest;
 import android.util.Log;
 
-import com.alipay.sdk.app.EnvUtils;
-import com.alipay.sdk.app.PayTask;
-
-import java.util.Map;
-
 import io.flutter.app.FlutterActivity;
-import io.flutter.plugins.GeneratedPluginRegistrant;
-import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.EventChannel;
+import io.flutter.plugin.common.EventChannel.EventSink;
+import io.flutter.plugin.common.EventChannel.StreamHandler;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
   private static final String CHANNEL = "examples.flutter.dev/battery";
+  private static final String CHARGING_CHANNEL = "samples.flutter.io/charging";
 
   private static final int SDK_PAY_FLAG = 1;
   private static final int SDK_AUTH_FLAG = 2;
@@ -39,9 +43,9 @@ public class MainActivity extends FlutterActivity {
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
-    public void handleMessage(Message msg, final Result result) {
+    public void handleMessage(Message msg, Result response) {
       System.out.println("here");
-      result.success("支付成功");
+      response.success("支付成功");
     };
   };
 
@@ -52,18 +56,29 @@ public class MainActivity extends FlutterActivity {
     requestPermission();
     GeneratedPluginRegistrant.registerWith(this);
 
+    new EventChannel(getFlutterView(), CHARGING_CHANNEL).setStreamHandler(
+        new StreamHandler() {
+          private BroadcastReceiver chargingStateChangeReceiver;
+          @Override
+          public void onListen(Object arguments, EventSink events) {
+            chargingStateChangeReceiver = createChargingStateChangeReceiver(events);
+            registerReceiver(chargingStateChangeReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+          }
+
+          @Override
+          public void onCancel(Object arguments) {
+            unregisterReceiver(chargingStateChangeReceiver);            
+            chargingStateChangeReceiver = null;
+          }
+        }
+    );
+
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(new MethodCallHandler() {
       @Override
-      public void onMethodCall(final MethodCall call, final Result result) {
+      public void onMethodCall(MethodCall call, Result result) {
         switch (call.method) {
           case "getBatteryLevel":
-            int batteryLevel = getBatteryLevel();
-
-            if (batteryLevel != -1) {
-              result.success(batteryLevel);
-            } else {
-              result.error("UNAVAILABLE", "Battery level not available.", null);
-            }
+            getBatteryLevel(result);
             break;
           case "alipay":
             final String payInfo = call.argument("payInfo");
@@ -78,25 +93,37 @@ public class MainActivity extends FlutterActivity {
           default:
             result.notImplemented();
         }
-        // if (call.method.equals("getBatteryLevel")) {
-        //   int batteryLevel = getBatteryLevel();
-
-        //   if (batteryLevel != -1) {
-        //     result.success(batteryLevel);
-        //   } else {
-        //     result.error("UNAVAILABLE", "Battery level not available.", null);
-        //   }
-        // } else if (call.method.equals("sendPaymentParameters")) {
-        //   final String payInfo = call.argument("payInfo");
-        //   payV2(payInfo);
-        // } else {
-        //   result.notImplemented();
-        // }
       }
     });
   }
 
-  private int getBatteryLevel() {
+  private BroadcastReceiver createChargingStateChangeReceiver(final EventSink events) {
+    return new BroadcastReceiver() {
+      @Override
+      public void onReceive(Context context, Intent intent) {
+        int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+
+        if (status == BatteryManager.BATTERY_STATUS_UNKNOWN) {
+          events.error("UNAVAILABLE", "Charging status unavailable", null);
+        } else {
+          boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                               status == BatteryManager.BATTERY_STATUS_FULL;
+          events.success(isCharging ? "charging" : "discharging");
+        }
+      }
+    };
+  }
+
+  private BroadcastReceiver createSetStream(final EventSink events) {
+    return new BroadcastReceiver() {
+      @Override
+      public void onReceive(Context context, Intent intent) {
+        events.success("success");
+      }
+    };
+  }
+
+  private void getBatteryLevel(final Result response) {
     int batteryLevel = -1;
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
       BatteryManager batteryManager = (BatteryManager) getSystemService(BATTERY_SERVICE);
@@ -107,8 +134,12 @@ public class MainActivity extends FlutterActivity {
       batteryLevel = (intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100)
           / intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
     }
-
-    return batteryLevel;
+    if (batteryLevel != -1) {
+      response.success(batteryLevel);
+    } else {
+      response.error("UNAVAILABLE", "Battery level not available.", null);
+    }
+    //callback.success(batteryLevel);
   }
 
   private static final int PERMISSIONS_REQUEST_CODE = 1002;
@@ -136,7 +167,7 @@ public class MainActivity extends FlutterActivity {
     }
   }
 
-  public void payV2(String orderInfo, final Result callback) {
+  public void payV2(String orderInfo, final Result response) {
 //    PayTask alipay = new PayTask(MainActivity.this);
 //    Map<String, String> result = alipay.payV2(orderInfo, true);
 //    Log.i("msp", result.toString());
@@ -150,13 +181,20 @@ public class MainActivity extends FlutterActivity {
     final Runnable payRunnable = new Runnable() {
       @Override
       public void run() {
-        PayTask alipay = new PayTask(MainActivity.this);
-        Map<String, String> result = alipay.payV2(orderInfo, true);
-        Log.i("msp", result.toString());
-        System.out.println("success");
+        try {
+          PayTask alipay = new PayTask(MainActivity.this);
+          Map<String, String> result = alipay.payV2(orderInfo, true);
+          Log.i("msp", result.toString());
+          System.out.println("success");
 
-        callback.success(result.toString());
-
+          //response.success("支付成功");
+//          Message msg = new Message();
+//          msg.what = SDK_PAY_FLAG;
+//          msg.obj = result;
+//          mHandler.handleMessage(msg, response);
+        } catch (Exception e) {
+          //response.error("error", "支付发起错误", null);
+        }
 //        Message msg = new Message();
 //        msg.what = SDK_PAY_FLAG;
 //        msg.obj = result;
@@ -169,18 +207,26 @@ public class MainActivity extends FlutterActivity {
     payThread.start();
   }
 
-  public void multiThreadedTest(final Result callback) {
+  public void multiThreadedTest(final Result response) {
+    //createSetStream();
+    final Runnable payRunnable = new Runnable() {
+      @Override
+      public void run() {
+        try{
+//          PayTask alipay = new PayTask(MainActivity.this);
+//          Map<String, String> result = alipay.payV2(orderInfo, true);
+          System.out.println("正常");
 
+        } catch (Exception e){
+          System.out.println(e.toString());
+          //response.error("error", "支付发生错误", null);
+        }
+      }
+    };
 
-        Message msg = new Message();
-        msg.what = SDK_PAY_FLAG;
-        msg.obj = "测试多线程";
-        callback.success("回调成功");
-
-    // Message msg = new Message();
-    // msg.what = SDK_PAY_FLAG;
-    // msg.obj = "测试多线程";
-    // return msg.obj.toString();
+    //必须异步调用
+    Thread payThread = new Thread(payRunnable);
+    payThread.start();
   }
 
   /*

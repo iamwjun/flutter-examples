@@ -33,16 +33,17 @@ class AlipayDemo extends StatefulWidget {
 }
 
 class _AlipayDemoState extends State<AlipayDemo> {
-  static const platform = const MethodChannel('examples.flutter.dev/battery');
+  static const MethodChannel platform = const MethodChannel('examples.flutter.dev/battery');
+  static const EventChannel eventChannel = EventChannel('samples.flutter.io/charging');
 
   Future<void> _test() async {
-    print("测试开始");
-    try{
-      final String result = await platform.invokeMethod("test");
-      print(result);
-    } on PlatformException catch (e) {
-      _neverSatisfied(e.message);
-    }
+     print("测试开始");
+     try{
+       final String result = await platform.invokeMethod("test");
+       debugPrint(result.toString());
+     } on PlatformException catch (e) {
+       _neverSatisfied(e.message);
+     }
   }
 
   Future<void> _wxPay() async {
@@ -54,9 +55,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
     final Post result = await _payment();
     try {
       if (result.code == 200) {
-        print("发起支付");
-        final String payInfo = await _sendPaymentParameters(result.content);
-        print("返回结果$payInfo");
+        _sendPaymentParameters(result.content);
       } else {
         _neverSatisfied("错误编码: ${result.code}, 错误信息: ${result.message}");
       }
@@ -123,6 +122,27 @@ class _AlipayDemoState extends State<AlipayDemo> {
     return result;
   }
 
+  String _chargingStatus = '支付结果: unknown.';
+
+  @override
+  void initState() {
+    super.initState();
+    eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+  }
+
+  void _onEvent(Object event) {
+    setState(() {
+      _chargingStatus =
+          "支付结果: ${event == 'charging' ? '' : 'dis'}charging.";
+    });
+  }
+
+  void _onError(Object error) {
+    setState(() {
+      _chargingStatus = '支付结果: unknown.';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,7 +167,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
               padding: EdgeInsets.only(left: 60.0, right: 60.0),
               child: Text('测试多线程'),
               onPressed: _test,
-            )
+            ),
+            Text(_chargingStatus)
           ],
         ),
       ),
