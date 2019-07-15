@@ -22,6 +22,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.Manifest;
 import android.util.Log;
+import android.view.View;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.EventChannel;
@@ -43,10 +44,15 @@ public class MainActivity extends FlutterActivity {
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
-    public void handleMessage(Message msg, Result response) {
+    public void handleMessage(Message msg) {
       System.out.println("here");
-      response.success("支付成功");
     };
+
+//    public void sendBroadcast(String msg) {
+//      Intent intent = new Intent(NORMAL_ACTION);
+//      intent.putExtra("success", "Hi");
+//      sendBroadcast(intent);
+//    }
   };
 
   @Override
@@ -59,16 +65,21 @@ public class MainActivity extends FlutterActivity {
     new EventChannel(getFlutterView(), CHARGING_CHANNEL).setStreamHandler(
         new StreamHandler() {
           private BroadcastReceiver chargingStateChangeReceiver;
+          private BroadcastReceiver changeStream;
           @Override
           public void onListen(Object arguments, EventSink events) {
             chargingStateChangeReceiver = createChargingStateChangeReceiver(events);
             registerReceiver(chargingStateChangeReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+            changeStream = createSetStream(events);
+            registerReceiver(changeStream, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
           }
 
           @Override
           public void onCancel(Object arguments) {
             unregisterReceiver(chargingStateChangeReceiver);            
             chargingStateChangeReceiver = null;
+            unregisterReceiver(changeStream);
+            changeStream = null;
           }
         }
     );
@@ -82,13 +93,13 @@ public class MainActivity extends FlutterActivity {
             break;
           case "alipay":
             final String payInfo = call.argument("payInfo");
-            payV2(payInfo, result);
+            payV2(payInfo);
             break;
           case "wxpay":
             result.success("微信支付暂不支持");
             break;
           case "test":
-            multiThreadedTest(result);
+            multiThreadedTest();
             break;
           default:
             result.notImplemented();
@@ -114,13 +125,24 @@ public class MainActivity extends FlutterActivity {
     };
   }
 
+  public void sendBroadcast() {
+    System.out.println("Msg");
+    Intent intent = new Intent(CHARGING_CHANNEL);
+    intent.putExtra(CHARGING_CHANNEL, "Hi");
+    sendBroadcast(intent);
+  }
+
   private BroadcastReceiver createSetStream(final EventSink events) {
     return new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
-        events.success("success");
+        events.success("发送广播");
       }
     };
+  }
+
+  private void getTest(EventSink events){
+    events.success("test");
   }
 
   private void getBatteryLevel(final Result response) {
@@ -167,17 +189,7 @@ public class MainActivity extends FlutterActivity {
     }
   }
 
-  public void payV2(String orderInfo, final Result response) {
-//    PayTask alipay = new PayTask(MainActivity.this);
-//    Map<String, String> result = alipay.payV2(orderInfo, true);
-//    Log.i("msp", result.toString());
-//    System.out.println("success");
-//
-//    Message msg = new Message();
-//    msg.what = SDK_PAY_FLAG;
-//    msg.obj = result;
-//    callback.success(msg.obj.toString());
-
+  public void payV2(String orderInfo) {
     final Runnable payRunnable = new Runnable() {
       @Override
       public void run() {
@@ -187,36 +199,31 @@ public class MainActivity extends FlutterActivity {
           Log.i("msp", result.toString());
           System.out.println("success");
 
-          //response.success("支付成功");
 //          Message msg = new Message();
 //          msg.what = SDK_PAY_FLAG;
 //          msg.obj = result;
-//          mHandler.handleMessage(msg, response);
+//          mHandler.handleMessage(msg);
         } catch (Exception e) {
-          //response.error("error", "支付发起错误", null);
+          // response.error("error", "支付发起错误", null);
+          System.out.println("error");
         }
-//        Message msg = new Message();
-//        msg.what = SDK_PAY_FLAG;
-//        msg.obj = result;
-//        mHandler.handleMessage(msg);
       }
     };
 
     //必须异步调用
+    //runOnUiThread(payRunnable);
     Thread payThread = new Thread(payRunnable);
     payThread.start();
   }
 
-  public void multiThreadedTest(final Result response) {
+  public void multiThreadedTest() {
     //createSetStream();
     final Runnable payRunnable = new Runnable() {
       @Override
       public void run() {
         try{
-//          PayTask alipay = new PayTask(MainActivity.this);
-//          Map<String, String> result = alipay.payV2(orderInfo, true);
+          final String text = "异步返回数据!";
           System.out.println("正常");
-
         } catch (Exception e){
           System.out.println(e.toString());
           //response.error("error", "支付发生错误", null);
@@ -225,8 +232,9 @@ public class MainActivity extends FlutterActivity {
     };
 
     //必须异步调用
-    Thread payThread = new Thread(payRunnable);
-    payThread.start();
+    runOnUiThread(payRunnable);
+//    Thread payThread = new Thread(runOnUiThread(payRunnable));
+//    payThread.start();
   }
 
   /*

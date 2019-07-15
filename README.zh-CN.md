@@ -48,6 +48,13 @@
 - [参考](https://github.com/flutter/flutter/issues/16259)
 - [导入aar](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
+11 - base
+- how use EventChannel
+- [官网API文档](https://api.flutter.dev/javadoc/index.html?io/flutter/plugin/common/EventChannel.html)
+- [官网API文档](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
+- [多线程](https://www.jianshu.com/p/e39449026f21)
+- [广播](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
+
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)
 [精选的样本列表](https://github.com/flutter/samples/blob/master/INDEX.md)

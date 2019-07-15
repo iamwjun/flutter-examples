@@ -48,6 +48,13 @@ Below is a list and links to related documents:
 - [Reference](https://github.com/flutter/flutter/issues/16259)
 - [Reference](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
+11 - base
+- how use EventChannel
+- [Reference](https://api.flutter.dev/javadoc/index.html?io/flutter/plugin/common/EventChannel.html)
+- [Reference](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
+- [Reference](https://www.jianshu.com/p/e39449026f21)
+- [Reference](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
+
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
 [A curated list of samples](https://github.com/flutter/samples/blob/master/INDEX.md)

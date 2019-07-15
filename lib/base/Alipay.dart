@@ -39,8 +39,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
   Future<void> _test() async {
      print("测试开始");
      try{
-       final String result = await platform.invokeMethod("test");
-       debugPrint(result.toString());
+       await platform.invokeMethod("test");
      } on PlatformException catch (e) {
        _neverSatisfied(e.message);
      }
@@ -131,6 +130,7 @@ class _AlipayDemoState extends State<AlipayDemo> {
   }
 
   void _onEvent(Object event) {
+    print('返回: $event.toString()');
     setState(() {
       _chargingStatus =
           "支付结果: ${event == 'charging' ? '' : 'dis'}charging.";
