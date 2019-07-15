@@ -54,6 +54,7 @@
 - [官网API文档](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
 - [多线程](https://www.jianshu.com/p/e39449026f21)
 - [广播](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
+- [广播](https://developer.android.com/guide/components/broadcasts#java)
 
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)

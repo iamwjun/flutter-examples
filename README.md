@@ -54,6 +54,7 @@ Below is a list and links to related documents:
 - [Reference](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
 - [Reference](https://www.jianshu.com/p/e39449026f21)
 - [Reference](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
+- [Reference](https://developer.android.com/guide/components/broadcasts#java)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
