@@ -1,6 +1,7 @@
 package com.example.example;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
@@ -37,15 +38,21 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
 public class MainActivity extends FlutterActivity {
   private static final String CHANNEL = "examples.flutter.dev/battery";
   private static final String CHARGING_CHANNEL = "samples.flutter.io/charging";
+  private PayEventSink eventSink = new PayEventSink();
 
   private static final int SDK_PAY_FLAG = 1;
   private static final int SDK_AUTH_FLAG = 2;
+  private String payResult = "none";
 
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
-    public void handleMessage(Message msg) {
+    public void handleMessage(Message msg, final Result result) {
       System.out.println("here");
+      result.success("回调成功");
+//      Map<String, Object> event = new HashMap<>();
+//      event.put("event", "completed");
+//      eventSink.success(event);
     };
 
 //    public void sendBroadcast(String msg) {
@@ -68,10 +75,8 @@ public class MainActivity extends FlutterActivity {
           private BroadcastReceiver changeStream;
           @Override
           public void onListen(Object arguments, EventSink events) {
-            chargingStateChangeReceiver = createChargingStateChangeReceiver(events);
-            registerReceiver(chargingStateChangeReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
             changeStream = createSetStream(events);
-            registerReceiver(changeStream, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+            registerReceiver(changeStream, new Intent("net.deniro.android.MY_BROADCAST"));
           }
 
           @Override
@@ -136,7 +141,7 @@ public class MainActivity extends FlutterActivity {
     return new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
-        events.success("发送广播");
+        //events.success("发送广播");
       }
     };
   }
@@ -199,10 +204,10 @@ public class MainActivity extends FlutterActivity {
           Log.i("msp", result.toString());
           System.out.println("success");
 
-//          Message msg = new Message();
-//          msg.what = SDK_PAY_FLAG;
-//          msg.obj = result;
-//          mHandler.handleMessage(msg);
+          Message msg = new Message();
+          msg.what = SDK_PAY_FLAG;
+          msg.obj = result;
+          mHandler.handleMessage(msg);
         } catch (Exception e) {
           // response.error("error", "支付发起错误", null);
           System.out.println("error");
@@ -224,6 +229,11 @@ public class MainActivity extends FlutterActivity {
         try{
           final String text = "异步返回数据!";
           System.out.println("正常");
+
+          Message msg = new Message();
+          msg.what = SDK_PAY_FLAG;
+          msg.obj = "支付结果";
+          mHandler.handleMessage(msg);
         } catch (Exception e){
           System.out.println(e.toString());
           //response.error("error", "支付发生错误", null);

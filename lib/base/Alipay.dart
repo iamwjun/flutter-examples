@@ -130,10 +130,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
   }
 
   void _onEvent(Object event) {
-    print('返回: $event.toString()');
     setState(() {
-      _chargingStatus =
-          "支付结果: ${event == 'charging' ? '' : 'dis'}charging.";
+      _chargingStatus = "支付结果: ${event == 'charging' ? '' : 'dis'}charging.";
     });
   }
 
