@@ -76,7 +76,7 @@ public class MainActivity extends FlutterActivity {
           @Override
           public void onListen(Object arguments, EventSink events) {
             changeStream = createSetStream(events);
-            registerReceiver(changeStream, new Intent("net.deniro.android.MY_BROADCAST"));
+            registerReceiver(changeStream, new IntentFilter("net.deniro.android.MY_BROADCAST"));
           }
 
           @Override
