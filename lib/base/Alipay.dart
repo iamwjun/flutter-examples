@@ -37,7 +37,6 @@ class _AlipayDemoState extends State<AlipayDemo> {
   static const EventChannel eventChannel = EventChannel('samples.flutter.io/charging');
 
   Future<void> _test() async {
-     print("测试开始");
      try{
        await platform.invokeMethod("test");
      } on PlatformException catch (e) {
@@ -130,8 +129,9 @@ class _AlipayDemoState extends State<AlipayDemo> {
   }
 
   void _onEvent(Object event) {
+    print("接收广播: $event");
     setState(() {
-      _chargingStatus = "支付结果: ${event == 'charging' ? '' : 'dis'}charging.";
+      _chargingStatus = "支付结果: $event";
     });
   }
 

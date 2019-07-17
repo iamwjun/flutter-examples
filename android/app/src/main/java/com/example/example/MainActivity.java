@@ -44,22 +44,17 @@ public class MainActivity extends FlutterActivity {
   private static final int SDK_AUTH_FLAG = 2;
   private String payResult = "none";
 
+  MyReceiver receiver;
+  IntentFilter intentFilter;
+
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
-    public void handleMessage(Message msg, final Result result) {
-      System.out.println("here");
-      result.success("回调成功");
-//      Map<String, Object> event = new HashMap<>();
-//      event.put("event", "completed");
-//      eventSink.success(event);
+    public void handleMessage(Message msg) {
+      Intent intent = new Intent("net.deniro.android.MY_BROADCAST");
+      intent.putExtra("Msg", msg.obj.toString());
+      sendBroadcast(intent);
     };
-
-//    public void sendBroadcast(String msg) {
-//      Intent intent = new Intent(NORMAL_ACTION);
-//      intent.putExtra("success", "Hi");
-//      sendBroadcast(intent);
-//    }
   };
 
   @Override
@@ -69,6 +64,9 @@ public class MainActivity extends FlutterActivity {
     requestPermission();
     GeneratedPluginRegistrant.registerWith(this);
 
+    //receiver = new MyReceiver();
+    intentFilter = new IntentFilter("net.deniro.android.MY_BROADCAST");
+
     new EventChannel(getFlutterView(), CHARGING_CHANNEL).setStreamHandler(
         new StreamHandler() {
           private BroadcastReceiver chargingStateChangeReceiver;
@@ -76,13 +74,11 @@ public class MainActivity extends FlutterActivity {
           @Override
           public void onListen(Object arguments, EventSink events) {
             changeStream = createSetStream(events);
-            registerReceiver(changeStream, new IntentFilter("net.deniro.android.MY_BROADCAST"));
+            registerReceiver(changeStream, intentFilter);
           }
 
           @Override
           public void onCancel(Object arguments) {
-            unregisterReceiver(chargingStateChangeReceiver);            
-            chargingStateChangeReceiver = null;
             unregisterReceiver(changeStream);
             changeStream = null;
           }
@@ -130,18 +126,13 @@ public class MainActivity extends FlutterActivity {
     };
   }
 
-  public void sendBroadcast() {
-    System.out.println("Msg");
-    Intent intent = new Intent(CHARGING_CHANNEL);
-    intent.putExtra(CHARGING_CHANNEL, "Hi");
-    sendBroadcast(intent);
-  }
-
   private BroadcastReceiver createSetStream(final EventSink events) {
     return new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
-        //events.success("发送广播");
+        String action = intent.getAction();
+        String msg = intent.getStringExtra("Msg");
+        events.success(msg);
       }
     };
   }
@@ -227,9 +218,6 @@ public class MainActivity extends FlutterActivity {
       @Override
       public void run() {
         try{
-          final String text = "异步返回数据!";
-          System.out.println("正常");
-
           Message msg = new Message();
           msg.what = SDK_PAY_FLAG;
           msg.obj = "支付结果";
