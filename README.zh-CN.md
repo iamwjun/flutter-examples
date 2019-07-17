@@ -48,13 +48,17 @@
 - [参考](https://github.com/flutter/flutter/issues/16259)
 - [导入aar](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
-11 - base
-- how use EventChannel
+11 - Android Broadcasts
+- how use Android Broadcasts
 - [官网API文档](https://api.flutter.dev/javadoc/index.html?io/flutter/plugin/common/EventChannel.html)
 - [官网API文档](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
 - [多线程](https://www.jianshu.com/p/e39449026f21)
 - [广播](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
 - [广播](https://developer.android.com/guide/components/broadcasts#java)
+
+12 - base directory Alipay.dart
+- how use weixin pay
+- [官网示例](https://www.jianshu.com/p/84eac713f007)
 
 flutter参考及学习资源
 [FlutterExampleApps](https://github.com/iampawan/FlutterExampleApps)

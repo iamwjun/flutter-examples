@@ -48,13 +48,17 @@ Below is a list and links to related documents:
 - [Reference](https://github.com/flutter/flutter/issues/16259)
 - [Reference](https://stackoverflow.com/questions/41669038/how-to-build-flutter-project-with-android-aar-file)
 
-11 - base
-- how use EventChannel
+11 - Android Broadcasts
+- how use Android Broadcasts
 - [Reference](https://api.flutter.dev/javadoc/index.html?io/flutter/plugin/common/EventChannel.html)
 - [Reference](https://api.flutter.dev/javadoc/io/flutter/plugin/common/EventChannel.html)
 - [Reference](https://www.jianshu.com/p/e39449026f21)
 - [Reference](https://www.journaldev.com/10356/android-broadcastreceiver-example-tutorial)
 - [Reference](https://developer.android.com/guide/components/broadcasts#java)
+
+12 - base directory Alipay.dart
+- how use weixin pay
+- [Reference](https://www.jianshu.com/p/84eac713f007)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
