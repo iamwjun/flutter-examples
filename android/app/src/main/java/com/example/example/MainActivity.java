@@ -1,12 +1,10 @@
 package com.example.example;
 
 import java.util.Map;
-import java.util.HashMap;
 
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -23,7 +21,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.Manifest;
 import android.util.Log;
-import android.view.View;
+import android.widget.Toast;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.EventChannel;
@@ -38,20 +36,18 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
 public class MainActivity extends FlutterActivity {
   private static final String CHANNEL = "examples.flutter.dev/battery";
   private static final String CHARGING_CHANNEL = "samples.flutter.io/charging";
-  private PayEventSink eventSink = new PayEventSink();
+  private static final String PAY_BROADCAST = "examples.pay.android.broadcast";
 
   private static final int SDK_PAY_FLAG = 1;
   private static final int SDK_AUTH_FLAG = 2;
-  private String payResult = "none";
 
-  MyReceiver receiver;
   IntentFilter intentFilter;
 
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @SuppressWarnings("unused")
     public void handleMessage(Message msg) {
-      Intent intent = new Intent("net.deniro.android.MY_BROADCAST");
+      Intent intent = new Intent(PAY_BROADCAST);
       intent.putExtra("Msg", msg.obj.toString());
       sendBroadcast(intent);
     };
@@ -64,8 +60,7 @@ public class MainActivity extends FlutterActivity {
     requestPermission();
     GeneratedPluginRegistrant.registerWith(this);
 
-    //receiver = new MyReceiver();
-    intentFilter = new IntentFilter("net.deniro.android.MY_BROADCAST");
+    intentFilter = new IntentFilter(PAY_BROADCAST);
 
     new EventChannel(getFlutterView(), CHARGING_CHANNEL).setStreamHandler(
         new StreamHandler() {
@@ -137,10 +132,6 @@ public class MainActivity extends FlutterActivity {
     };
   }
 
-  private void getTest(EventSink events){
-    events.success("test");
-  }
-
   private void getBatteryLevel(final Result response) {
     int batteryLevel = -1;
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
@@ -157,7 +148,6 @@ public class MainActivity extends FlutterActivity {
     } else {
       response.error("UNAVAILABLE", "Battery level not available.", null);
     }
-    //callback.success(batteryLevel);
   }
 
   private static final int PERMISSIONS_REQUEST_CODE = 1002;
@@ -181,7 +171,7 @@ public class MainActivity extends FlutterActivity {
               }, PERMISSIONS_REQUEST_CODE);
 
     } else {
-      //showToast(this, getString(R.string.permission_already_granted));
+      showToast(this, "Required permissions have already been granted to AlipaySDK");
     }
   }
 
@@ -200,64 +190,37 @@ public class MainActivity extends FlutterActivity {
           msg.obj = result;
           mHandler.handleMessage(msg);
         } catch (Exception e) {
-          // response.error("error", "支付发起错误", null);
           System.out.println("error");
         }
       }
     };
 
     //必须异步调用
-    //runOnUiThread(payRunnable);
     Thread payThread = new Thread(payRunnable);
     payThread.start();
   }
 
   public void multiThreadedTest() {
-    //createSetStream();
     final Runnable payRunnable = new Runnable() {
       @Override
       public void run() {
         try{
           Message msg = new Message();
           msg.what = SDK_PAY_FLAG;
-          msg.obj = "支付结果";
+          msg.obj = "多线程成功";
           mHandler.handleMessage(msg);
         } catch (Exception e){
           System.out.println(e.toString());
-          //response.error("error", "支付发生错误", null);
         }
       }
     };
 
     //必须异步调用
-    runOnUiThread(payRunnable);
-//    Thread payThread = new Thread(runOnUiThread(payRunnable));
-//    payThread.start();
+    Thread payThread = new Thread(payRunnable);
+    payThread.start();
   }
 
-  /*
-   * 参考 https://www.programcreek.com/java-api-examples/?code=markmooibroek/apn_fb_login/apn_fb_login-master/android/src/main/java/com/appnormal/plugin/fblogin/ApnFbLoginPlugin.java#
-   */
-//  private void resultWithCallback(FacebookCallback<LoginResult> callback) {
-//    mCallbackManager = CallbackManager.Factory.create();
-//    LoginManager.getInstance().registerCallback(mCallbackManager, callback);
-//    LoginManager.getInstance().logInWithReadPermissions(activity, Arrays.asList("public_profile", "email"));
-//  }
-//
-//  private void queryMe(Result result) {
-//    GraphRequest request = GraphRequest.newMeRequest(
-//            AccessToken.getCurrentAccessToken(),
-//            (object, response) -> {
-//              try {
-//                result.success(JsonConverter.convertToMap(object));
-//              } catch (JSONException e) {
-//                result.error(TAG, "Error", e.getMessage());
-//              }
-//            });
-//
-//    Bundle parameters = new Bundle();
-//    parameters.putString("fields", "id,name,email");
-//    request.setParameters(parameters);
-//    request.executeAsync();
-//  }
+  private static void showToast(Context ctx, String msg) {
+    Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
+  }
 }
