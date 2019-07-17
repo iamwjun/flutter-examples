@@ -58,6 +58,7 @@
 
 12 - base directory Alipay.dart
 - how use weixin pay
+- 没有android手机，所以安装夜神模拟器模拟微信支付, adb.exe connect 127.0.0.1:62001
 - [官网示例](https://www.jianshu.com/p/84eac713f007)
 
 flutter参考及学习资源
