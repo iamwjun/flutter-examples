@@ -33,20 +33,39 @@ class AlipayDemo extends StatefulWidget {
 }
 
 class _AlipayDemoState extends State<AlipayDemo> {
-  static const MethodChannel platform = const MethodChannel('examples.flutter.dev/battery');
-  static const EventChannel eventChannel = EventChannel('samples.flutter.io/charging');
+  static const MethodChannel platform =
+      const MethodChannel('examples.flutter.dev/battery');
+  static const EventChannel eventChannel =
+      EventChannel('samples.flutter.io/charging');
 
   Future<void> _test() async {
-     try{
-       await platform.invokeMethod("test");
-     } on PlatformException catch (e) {
-       _neverSatisfied(e.message);
-     }
+    try {
+      await platform.invokeMethod("test");
+    } on PlatformException catch (e) {
+      _neverSatisfied(e.message);
+    }
   }
 
   Future<void> _wxPay() async {
-    final String message = await platform.invokeMethod("wxpay");
-    _neverSatisfied(message);
+    // final String message = await platform.invokeMethod("wxpay");
+    // _neverSatisfied(message);
+    final client = new http.Client();
+    Post result;
+    try {
+      final response = await client
+          .get("https://wxpay.wxutil.com/pub_v2/app/app_pay.php")
+          .timeout(const Duration(seconds: 5));
+      result = Post.fromJson(json.decode(response.body));
+    } on PlatformException catch (e) {
+      result = Post(code: int.parse(e.code), message: e.message, content: e.toString());
+    } on TimeoutException catch (e) {
+      result = Post(code: 408, message: e.message, content: e.toString());
+    } on FormatException catch (e) {
+      result = Post(code: 405, message: e.message, content: e.toString());
+    } on SocketException catch (e) {
+      result = Post(code: 407, message: e.message, content: e.toString());
+    }
+    print("打印结果： $result.toString()");
   }
 
   Future<void> _initiatedPayment() async {
@@ -99,7 +118,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
           .timeout(const Duration(seconds: 5));
       result = Post.fromJson(json.decode(response.body));
     } on PlatformException catch (e) {
-      result = Post(code: int.parse(e.code), message: e.message, content: e.toString());
+      result = Post(
+          code: int.parse(e.code), message: e.message, content: e.toString());
     } on TimeoutException catch (e) {
       result = Post(code: 408, message: e.message, content: e.toString());
     } on FormatException catch (e) {
@@ -113,7 +133,8 @@ class _AlipayDemoState extends State<AlipayDemo> {
   Future<String> _sendPaymentParameters(payInfo) async {
     String result;
     try {
-      result = await platform.invokeMethod("alipay", <String, dynamic>{"payInfo": payInfo});
+      result = await platform
+          .invokeMethod("alipay", <String, dynamic>{"payInfo": payInfo});
     } on PlatformException catch (e) {
       result = e.details;
     }
