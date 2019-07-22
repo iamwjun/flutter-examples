@@ -59,6 +59,8 @@ Below is a list and links to related documents:
 12 - base directory Alipay.dart
 - how use weixin pay
 - [Reference](https://www.jianshu.com/p/84eac713f007)
+- [Reference](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5)
+- [Reference](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419319167&token=&lang=zh_CN5)
 
 Flutter reference and learning resources
 [all the example apps](https://github.com/iampawan/FlutterExampleApps)
