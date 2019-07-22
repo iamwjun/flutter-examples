@@ -13,7 +13,7 @@ import 'package:flutter/services.dart';
 class Post {
   final int code;
   final String message;
-  final String content;
+  final dynamic content;
 
   Post({this.code, this.message, this.content});
 
@@ -33,6 +33,7 @@ class AlipayDemo extends StatefulWidget {
 }
 
 class _AlipayDemoState extends State<AlipayDemo> {
+  final String base = "http://192.168.98.20:8080/";
   static const MethodChannel platform =
       const MethodChannel('examples.flutter.dev/battery');
   static const EventChannel eventChannel =
@@ -48,28 +49,21 @@ class _AlipayDemoState extends State<AlipayDemo> {
 
   Future<void> _wxPay() async {
     // final String message = await platform.invokeMethod("wxpay");
-    // _neverSatisfied(message);
-    final client = new http.Client();
-    Post result;
+    final Post result = await _payment("wxpay");
     try {
-      final response = await client
-          .get("https://wxpay.wxutil.com/pub_v2/app/app_pay.php")
-          .timeout(const Duration(seconds: 5));
-      result = Post.fromJson(json.decode(response.body));
+      if (result.code == 200) {
+        await platform.invokeMethod(
+            "wxpay", <String, dynamic>{"payInfo": result.content});
+      } else {
+        _neverSatisfied("错误编码: ${result.code}, 错误信息: ${result.message}");
+      }
     } on PlatformException catch (e) {
-      result = Post(code: int.parse(e.code), message: e.message, content: e.toString());
-    } on TimeoutException catch (e) {
-      result = Post(code: 408, message: e.message, content: e.toString());
-    } on FormatException catch (e) {
-      result = Post(code: 405, message: e.message, content: e.toString());
-    } on SocketException catch (e) {
-      result = Post(code: 407, message: e.message, content: e.toString());
+      _neverSatisfied(e.message);
     }
-    print("打印结果： $result.toString()");
   }
 
   Future<void> _initiatedPayment() async {
-    final Post result = await _payment();
+    final Post result = await _payment("alipay");
     try {
       if (result.code == 200) {
         _sendPaymentParameters(result.content);
@@ -109,13 +103,12 @@ class _AlipayDemoState extends State<AlipayDemo> {
     );
   }
 
-  Future<Post> _payment() async {
+  Future<Post> _payment(String type) async {
     final client = new http.Client();
     Post result;
     try {
-      final response = await client
-          .get("http://192.168.98.20:8080/alipay")
-          .timeout(const Duration(seconds: 5));
+      final response =
+          await client.get(base + type).timeout(const Duration(seconds: 5));
       result = Post.fromJson(json.decode(response.body));
     } on PlatformException catch (e) {
       result = Post(

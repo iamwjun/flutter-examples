@@ -2,6 +2,11 @@ package com.example.example;
 
 import java.util.Map;
 
+import org.json.JSONObject;
+import com.tencent.mm.opensdk.constants.Build;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
 import android.annotation.SuppressLint;
@@ -34,6 +39,8 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
+  private IWXAPI api;
+
   private static final String CHANNEL = "examples.flutter.dev/battery";
   private static final String CHARGING_CHANNEL = "samples.flutter.io/charging";
   private static final String PAY_BROADCAST = "examples.pay.android.broadcast";
@@ -57,6 +64,7 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
     super.onCreate(savedInstanceState);
+    api = WXAPIFactory.createWXAPI(this, "wxb4ba3c02aa476ea1");
     requestPermission();
     GeneratedPluginRegistrant.registerWith(this);
 
@@ -92,7 +100,9 @@ public class MainActivity extends FlutterActivity {
             payV2(payInfo);
             break;
           case "wxpay":
-            result.success("微信支付暂不支持");
+            //result.success("微信支付暂不支持");
+            final Map<String, String> content = call.argument("payInfo");
+            weChatPay(content);
             break;
           case "test":
             multiThreadedTest();
@@ -102,6 +112,27 @@ public class MainActivity extends FlutterActivity {
         }
       }
     });
+  }
+
+  private void weChatPay(Map<String, String> content){
+    System.out.println(content.toString());
+    try {
+      PayReq request = new PayReq();
+
+      request.appId = content.get("appid");
+      request.partnerId = content.get("partnerid");
+      request.prepayId = content.get("prepay_id");
+      request.packageValue = content.get("package");
+      request.nonceStr = content.get("nonce_str");
+      request.timeStamp = content.get("timestamp");
+      request.sign = content.get("sign");
+
+      showToast(this, "正常调起支付");
+      api.sendReq(request);
+    } catch (Exception e){
+      System.out.println("调起微信支付异常");
+    }
+
   }
 
   private BroadcastReceiver createChargingStateChangeReceiver(final EventSink events) {
