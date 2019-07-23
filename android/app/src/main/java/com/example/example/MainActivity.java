@@ -64,7 +64,7 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
     super.onCreate(savedInstanceState);
-    api = WXAPIFactory.createWXAPI(this, "wxd930ea5d5a258f4f");
+    api = WXAPIFactory.createWXAPI(this, "wx426b3015555a46be");
     requestPermission();
     GeneratedPluginRegistrant.registerWith(this);
 
