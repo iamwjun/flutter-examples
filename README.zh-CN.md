@@ -58,7 +58,6 @@
 
 12 - base directory Alipay.dart
 - how use weixin pay
-- 没有android手机，所以安装夜神模拟器模拟微信支付, adb.exe connect 127.0.0.1:62001
 - [运行官网示例](https://www.jianshu.com/p/84eac713f007)
 - [官网文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5)
 - [Android资源](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419319167&token=&lang=zh_CN5)
