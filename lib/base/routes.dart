@@ -19,6 +19,7 @@ List<RouteItem> routelist = [
   RouteItem('/BatteryLevel', '电池电量'),
   RouteItem('/GoogleMaps', 'Google地图'),
   RouteItem('/Alipay', '支付宝、微信支付示例'),
+  RouteItem('/ReorderableListViewDemo', 'ReorderableListViewDemo'),
   RouteItem('/NestedScrollView', 'NestedScrollView'),
   RouteItem('/RenderSliverHelpers', 'RenderSliverHelpers'),
 ];
@@ -36,5 +37,6 @@ Map<String, WidgetBuilder> routes() {
     '/BatteryLevel': (context) => BatteryLevel(title: '电池电量'),
     '/GoogleMaps': (context) => GoogleMaps(title: 'Google地图'),
     '/Alipay': (context) => AlipayDemo(title: '支付宝、微信支付示例'),
+    '/ReorderableListViewDemo': (context) => ReorderableListViewDemo(title: '可重新排序的列表视图'),
   };
 }
