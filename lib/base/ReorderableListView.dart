@@ -9,23 +9,49 @@ class ReorderableListViewDemo extends StatefulWidget {
 }
 
 class _ReorderableListViewDemoState extends State<ReorderableListViewDemo> {
+  List<String> data = ["aaa", "bbb", "ccc", "ddd", "eee", "fff"];
+
+  void onreorder(int oldIndex, int newIndex) {
+    setState(() {
+      if (newIndex > oldIndex) {
+        newIndex -= 1;
+      }
+      var x = data.removeAt(oldIndex);
+      data.insert(newIndex, x);
+    });
+  }
+
+  void onSort() {
+    setState(() {
+      data.sort();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.sort_by_alpha),
+            tooltip: "Sort it",
+            onPressed: onSort,
+          )
+        ],
       ),
       body: ReorderableListView(
-          header: Text("This is the header!"),
-          children: [
-            for (final item in myItems)
-              ListTile(key: ValueKey(item), title: Text('Item #$item'))
-          ],
-          onReorder: (oldIndex, newIndex) {
-            setState(() {
-              _updateMyItem(oldIndex, newIndex);
-            });
-          }),
+        header: Text("title"),
+        children: data
+            .map((index) => ListTile(
+                contentPadding: EdgeInsets.all(20.0),
+                key: ObjectKey(index),
+                title: Text("$index"),
+                subtitle: Text("Move it anywherer")))
+            .toList(),
+        onReorder: onreorder,
+      ),
     );
   }
 }
